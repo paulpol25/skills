@@ -18,6 +18,9 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 | Git Workflow | `shared/git-workflow/SKILL.md` | Branching, commits, pull requests |
 | Environment Config | `shared/environment-config/SKILL.md` | Env vars, secrets, config files |
 | Code Review | `shared/code-review/SKILL.md` | Review standards, checklist, feedback |
+| Debugging | `shared/debugging/SKILL.md` | Systematic root cause analysis |
+| TDD | `shared/test-driven-development/SKILL.md` | Red-Green-Refactor cycle |
+| Documentation | `shared/documentation/SKILL.md` | Writing READMEs, API docs, ADRs |
 
 ---
 
@@ -45,6 +48,18 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 | Brainstorming | `planner/brainstorming/SKILL.md` |
 
 **Owns**: `roadmap.md`, `brainstorming_session.md`, high-level requirements.
+
+---
+
+## Agent: Product Manager
+
+**Role**: Translates high-level goals into concrete user value and testable stories.
+
+| Skill | Path |
+|-------|------|
+| Defining User Stories | `product/defining-user-stories/SKILL.md` |
+
+**Owns**: User stories, acceptance criteria, prioritizing value.
 
 ---
 
@@ -157,14 +172,27 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 
 ---
 
+## Agent: DevOps Engineer
+
+**Role**: Manages infrastructure, CI/CD pipelines, and deployment automation.
+
+| Skill | Path |
+|-------|------|
+| Configuring CI/CD | `devops/configuring-cicd/SKILL.md` |
+
+**Owns**: `.github/workflows`, Dockerfiles, deployment scripts.
+
+---
+
 ## Cross-Agent Contracts
 
 | Producer | Consumer | Contract |
 |----------|----------|----------|
-| Planner | Architect | Roadmap & ideation defines functional scope |
-| Planner | Agent Manager | Phasing defines task priority |
+| Planner | Product Manager | Roadmap defines value streams |
+| Product Manager | Architect | User stories define functional scope |
 | Architect | All domain agents | Technical spec defines scope per agent |
 | Security | All domain agents | Security policies and audit blockers |
+| DevOps | All domain agents | CI pipelines and build constraints |
 | Backend | Frontend | API routes define request/response shapes |
 | Database | Backend | Schema + query layer defines data access |
 | Auth | Backend + Frontend | Auth middleware + token format |

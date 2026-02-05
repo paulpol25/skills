@@ -4,7 +4,7 @@ A structured collection of skill files that guide AI coding agents through softw
 
 ## What This Is
 
-This repository contains a collection of markdown skill files organized across **9 agent roles**. Each skill file is a self-contained instruction set that tells an AI agent how to perform a specific software engineering task — from scaffolding a Flask app to designing a color system.
+This repository contains a collection of markdown skill files organized across **11 agent roles**. Each skill file is a self-contained instruction set that tells an AI agent how to perform a specific software engineering task — from scaffolding a Flask app to designing a color system.
 
 ## Agent Roles
 
@@ -12,6 +12,7 @@ This repository contains a collection of markdown skill files organized across *
 |-------|-----------|--------|-------|
 | Agent Manager | `agent-manager/` | 3 | Task delegation, orchestration, quality review |
 | Planner | `planner/` | 2 | Brainstorming, roadmapping, strategy |
+| Product Manager | `product/` | 1 | User stories, acceptance criteria |
 | Architect | `architect/` | 3 | Requirements analysis, system design, tech specs |
 | Designer | `designer/` | 5 | Brand identity, design systems, layouts, a11y |
 | Frontend Engineer | `frontend/` | 6 | React + TypeScript + Vite |
@@ -19,8 +20,9 @@ This repository contains a collection of markdown skill files organized across *
 | Database Engineer | `database/` | 5 | PostgreSQL + SQLAlchemy + Alembic |
 | Auth Engineer | `auth/` | 4 | Local auth, OAuth, JWT, security |
 | Security Engineer | `security/` | 3 | Audits, dependency vetting, agent hardening |
+| DevOps Engineer | `devops/` | 1 | CI/CD, infrastructure, deployment |
 
-All agents share 4 cross-cutting skills in `shared/`.
+All agents share 7 cross-cutting skills in `shared/`.
 
 ## How It Works
 
