@@ -9,9 +9,9 @@ description: Prepare and deploy the Flask application to a production environmen
 Deploy a hardened, production-ready Flask application served by a WSGI server (Gunicorn) behind a reverse proxy (Nginx), preferably containerized with Docker.
 
 ## When to Use
-* When the application is ready for staging or production release.
-* When setting up the CI/CD pipeline for deployment.
-* When moving off the development server (`flask run`).
+- When the application is ready for staging or production release.
+- When setting up the CI/CD pipeline for deployment.
+- When moving off the development server (`flask run`).
 
 ## Instructions
 
@@ -85,28 +85,28 @@ server {
 
 ## Constraints
 
-<do>
-* Always use a WSGI server like Gunicorn or uWSGI.
-* Run the application as a non-root user inside the container.
-* Pin dependencies in `requirements.txt` with exact versions.
-* Set `FLASK_ENV` (or `FLASK_DEBUG`) to `production` (or `0`).
-* Use environment variables for all secrets (API keys, DB passwords).
-* Health check endpoints (`/health`) should verify DB connectivity.
-</do>
+### ✅ Do
+- Always use a WSGI server like Gunicorn or uWSGI.
+- Run the application as a non-root user inside the container.
+- Pin dependencies in `requirements.txt` with exact versions.
+- Set `FLASK_ENV` (or `FLASK_DEBUG`) to `production` (or `0`).
+- Use environment variables for all secrets (API keys, DB passwords).
+- Health check endpoints (`/health`) should verify DB connectivity.
 
-<dont>
-* DO NOT use `flask run` in production. It is single-threaded and not secure.
-* DO NOT commit `.env` files to the repository.
-* DO NOT expose the Gunicorn port directly to the public internet; always use a reverse proxy.
-* DO NOT use the default `latest` tag for base images; pin to a specific version (e.g., `python:3.11-slim`).
-</dont>
+
+### ❌ Don&#x27;t
+- DO NOT use `flask run` in production. It is single-threaded and not secure.
+- DO NOT commit `.env` files to the repository.
+- DO NOT expose the Gunicorn port directly to the public internet; always use a reverse proxy.
+- DO NOT use the default `latest` tag for base images; pin to a specific version (e.g., `python:3.11-slim`).
+
 
 ## Output Format
-* `Dockerfile`
-* `gunicorn_config.py`
-* `docker-compose.yml` (optional, for orchestration)
-* Updated `requirements.txt` with `gunicorn`
+- `Dockerfile`
+- `gunicorn_config.py`
+- `docker-compose.yml` (optional, for orchestration)
+- Updated `requirements.txt` with `gunicorn`
 
 ## Dependencies
-* `backend/scaffolding-flask/SKILL.md`
-* `shared/environment-config/SKILL.md`
+- `backend/scaffolding-flask/SKILL.md`
+- `shared/environment-config/SKILL.md`

@@ -9,9 +9,9 @@ description: Implement comprehensive frontend testing using Vitest for unit/inte
 Ensure frontend reliability through a mix of unit tests for logic and integration tests for components, verifying behavior from the user's perspective.
 
 ## When to Use
-* Creating new components.
-* Implementing complex utility logic.
-* Fixing bugs (write a regression test).
+- Creating new components.
+- Implementing complex utility logic.
+- Fixing bugs (write a regression test).
 
 ## Instructions
 
@@ -69,24 +69,24 @@ Prefer MSW for API mocking to test the full network stack.
 
 ## Constraints
 
-<do>
-* Prioritize testing user interactions (clicks, typing) over internal state.
-* Use `screen.getByRole` as the primary query method (ensures accessibility).
-* Mock network requests at the network layer (MSW) or API client layer, not the component layer.
-* Run tests in CI before merging.
-* Group tests with `describe` blocks matching the component/feature name.
-</do>
+### ✅ Do
+- Prioritize testing user interactions (clicks, typing) over internal state.
+- Use `screen.getByRole` as the primary query method (ensures accessibility).
+- Mock network requests at the network layer (MSW) or API client layer, not the component layer.
+- Run tests in CI before merging.
+- Group tests with `describe` blocks matching the component/feature name.
 
-<dont>
-* DO NOT test implementation details (e.g., checking if a specific CSS class exists or if a state variable changed).
-* DO NOT use `getByTestId` unless no other query works.
-* DO NOT use shallow rendering (Enzyme style). Render the full component tree.
-* DO NOT ignore accessibility warnings in tests.
-</dont>
+
+### ❌ Don&#x27;t
+- DO NOT test implementation details (e.g., checking if a specific CSS class exists or if a state variable changed).
+- DO NOT use `getByTestId` unless no other query works.
+- DO NOT use shallow rendering (Enzyme style). Render the full component tree.
+- DO NOT ignore accessibility warnings in tests.
+
 
 ## Output Format
-* `*.test.tsx` or `*.spec.ts` files alongside the source files.
+- `*.test.tsx` or `*.spec.ts` files alongside the source files.
 
 ## Dependencies
-* `frontend/building-components/SKILL.md`
-* `designer/ensuring-accessibility/SKILL.md`
+- `frontend/building-components/SKILL.md`
+- `designer/ensuring-accessibility/SKILL.md`

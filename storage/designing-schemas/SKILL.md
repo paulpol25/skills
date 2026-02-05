@@ -9,10 +9,10 @@ Translate data entities from a tech spec into well-structured PostgreSQL tables 
 
 # When to Use
 
-* Starting a new feature that requires new database tables
-* Refactoring an existing schema to fix normalization issues
-* Reviewing a proposed data model before writing migrations
-* Adding relationships between existing entities
+- Starting a new feature that requires new database tables
+- Refactoring an existing schema to fix normalization issues
+- Reviewing a proposed data model before writing migrations
+- Adding relationships between existing entities
 
 # Instructions
 
@@ -32,9 +32,9 @@ Prefer `UUID` for distributed systems or `BIGSERIAL` for single-database deploym
 
 Every table must include these columns:
 
-* `id` — primary key
-* `created_at TIMESTAMPTZ NOT NULL DEFAULT now()`
-* `updated_at TIMESTAMPTZ NOT NULL DEFAULT now()`
+- `id` — primary key
+- `created_at TIMESTAMPTZ NOT NULL DEFAULT now()`
+- `updated_at TIMESTAMPTZ NOT NULL DEFAULT now()`
 
 ## 5. Define Constraints and Indexes
 
@@ -80,24 +80,24 @@ Refer to the naming conventions reference for all naming decisions. Use snake_ca
 
 # Constraints
 
-<do>
-* Use NOT NULL by default on every column; allow NULL only with explicit justification
-* Add CHECK constraints for value ranges and formats
-* Define indexes on all foreign key columns
-* Include id, created_at, and updated_at on every table
-* Use TIMESTAMPTZ for all timestamp columns
-* Add ON DELETE behavior (CASCADE, SET NULL, or RESTRICT) to every foreign key
-* Document denormalization decisions with comments in the SQL
-</do>
+### ✅ Do
+- Use NOT NULL by default on every column; allow NULL only with explicit justification
+- Add CHECK constraints for value ranges and formats
+- Define indexes on all foreign key columns
+- Include id, created_at, and updated_at on every table
+- Use TIMESTAMPTZ for all timestamp columns
+- Add ON DELETE behavior (CASCADE, SET NULL, or RESTRICT) to every foreign key
+- Document denormalization decisions with comments in the SQL
 
-<dont>
-* Use VARCHAR without a length limit; always specify a max length
-* Skip foreign key constraints for convenience
-* Use reserved SQL words (user, order, group) as table or column names
-* Create circular foreign key dependencies
-* Use floating point types for monetary values; use NUMERIC instead
-* Add surrogate keys to pure join tables unless they need independent identity
-</dont>
+
+### ❌ Don&#x27;t
+- Use VARCHAR without a length limit; always specify a max length
+- Skip foreign key constraints for convenience
+- Use reserved SQL words (user, order, group) as table or column names
+- Create circular foreign key dependencies
+- Use floating point types for monetary values; use NUMERIC instead
+- Add surrogate keys to pure join tables unless they need independent identity
+
 
 # Output Format
 
@@ -105,5 +105,5 @@ Produce a SQL file containing all `CREATE TABLE`, `CREATE INDEX`, and `ALTER TAB
 
 # Dependencies
 
-* [Task Tracking](../../shared/task-tracking/SKILL.md) — update task status as schema work progresses
-* [Naming Conventions](references/naming-conventions.md) — rules for table, column, index, and constraint names
+- [Task Tracking](../../shared/task-tracking/SKILL.md) — update task status as schema work progresses
+- [Naming Conventions](references/naming-conventions.md) — rules for table, column, index, and constraint names

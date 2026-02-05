@@ -30,24 +30,24 @@ All agents share 4 cross-cutting skills in `shared/`.
 
 ## File Structure
 
-* `AGENTS.md` — Master orchestration document (start here)
-* `tasks.md` — Global task tracker (Jira-style, single source of truth)
-* `templates/` — Canonical templates for tasks and skills
-* `shared/` — Cross-cutting skills used by all agents
-* `{agent}/` — Agent-specific skills, each in `{skill-name}/SKILL.md`
-* `references/` — Supporting detail docs within skill directories
+- `AGENTS.md` — Master orchestration document (start here)
+- `tasks.md` — Global task tracker (Jira-style, single source of truth)
+- `templates/` — Canonical templates for tasks and skills
+- `shared/` — Cross-cutting skills used by all agents
+- `{agent}/` — Agent-specific skills, each in `{skill-name}/SKILL.md`
+- `references/` — Supporting detail docs within skill directories
 
 ## Skill File Format
 
 Every `SKILL.md` follows a consistent structure:
 
-* **Frontmatter** — Name, description
-* **Goal** — One-sentence success definition
-* **When to Use** — Trigger conditions
-* **Instructions** — Step-by-step process with code examples
-* **Constraints** — `<do>` and `<dont>` tags for best/worst practices
-* **Output Format** — What the agent should produce
-* **Dependencies** — Links to prerequisite skills
+- **Frontmatter** — Name, description
+- **Goal** — One-sentence success definition
+- **When to Use** — Trigger conditions
+- **Instructions** — Step-by-step process with code examples
+- **Constraints** — `### ✅ Do` and `### ❌ Don&#x27;t` tags for best/worst practices
+- **Output Format** — What the agent should produce
+- **Dependencies** — Links to prerequisite skills
 
 ## Customization
 
@@ -60,8 +60,8 @@ To adapt this for your stack:
 
 ## Design Principles
 
-* **Gerund naming** for skill directories (`scaffolding-flask/`, not `scaffold-flask/`)
-* **Max 150 lines** per SKILL.md — depth goes in `references/` subdirectories
-* **Single tasks.md** — prevents conflicting task numbers across agents
-* **Max 1-hop references** — every skill links directly to what it needs
-* **Machine-parseable constraints** — `<do>`/`<dont>` XML tags for structured rules
+- **Gerund naming** for skill directories (`scaffolding-flask/`, not `scaffold-flask/`)
+- **Max 150 lines** per SKILL.md — depth goes in `references/` subdirectories
+- **Single tasks.md** — prevents conflicting task numbers across agents
+- **Max 1-hop references** — every skill links directly to what it needs
+- **Machine-parseable constraints** — `### ✅ Do`/`### ❌ Don&#x27;t` XML tags for structured rules

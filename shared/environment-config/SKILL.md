@@ -9,10 +9,10 @@ description: The environment-config skill standardizes how agents manage environ
 Keep application configuration secure, consistent, and well-documented so that any agent or developer can set up and run the project without guessing at required values.
 
 ## When to Use
-* When adding a new environment variable or secret
-* When setting up a new service or integration that requires credentials
-* When onboarding a new agent or developer to the project
-* When deploying to a new environment (staging, production)
+- When adding a new environment variable or secret
+- When setting up a new service or integration that requires credentials
+- When onboarding a new agent or developer to the project
+- When deploying to a new environment (staging, production)
 
 ## Instructions
 
@@ -97,34 +97,34 @@ if (missing.length > 0) {
 ```
 
 ### Step 4: Handle Secrets Safely
-* Pass secrets through environment variables, never hardcode them in source
-* Never log secret values — mask them in log output if you must reference them
-* Rotate secrets on a schedule and immediately if a leak is suspected
-* Use distinct secrets per environment (dev, staging, production)
+- Pass secrets through environment variables, never hardcode them in source
+- Never log secret values — mask them in log output if you must reference them
+- Rotate secrets on a schedule and immediately if a leak is suspected
+- Use distinct secrets per environment (dev, staging, production)
 
 ### Step 5: Document Every Variable
 Add a comment in `.env.example` explaining each variable's purpose, expected format, and where to obtain its value (e.g., "Get from Stripe dashboard > API keys").
 
 ## Constraints
 
-<do>
-* Validate all required config at application startup
-* Use `.env.example` as the single source of truth for required variables
-* Document every variable with a comment explaining its purpose
-* Use different values for each environment (dev, staging, production)
-* Add `.env` and `.env.local` to `.gitignore` before the first commit
-</do>
+### ✅ Do
+- Validate all required config at application startup
+- Use `.env.example` as the single source of truth for required variables
+- Document every variable with a comment explaining its purpose
+- Use different values for each environment (dev, staging, production)
+- Add `.env` and `.env.local` to `.gitignore` before the first commit
 
-<dont>
-* Never commit `.env` files containing real credentials
-* Never hardcode secrets in source code, config files, or tests
-* Never log secret values — even at debug level
-* Never use default values for secrets in production (fail instead)
-* Never share production secrets in chat, tickets, or documentation
-</dont>
+
+### ❌ Don&#x27;t
+- Never commit `.env` files containing real credentials
+- Never hardcode secrets in source code, config files, or tests
+- Never log secret values — even at debug level
+- Never use default values for secrets in production (fail instead)
+- Never share production secrets in chat, tickets, or documentation
+
 
 ## Output Format
 Configuration files (`.env.example`, config modules) written to the project root and documented in the project README when applicable.
 
 ## Dependencies
-* `../git-workflow/SKILL.md` — ensures `.env` is excluded via `.gitignore`
+- `../git-workflow/SKILL.md` — ensures `.env` is excluded via `.gitignore`

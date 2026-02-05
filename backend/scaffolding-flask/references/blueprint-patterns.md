@@ -43,9 +43,9 @@ Always version the API and name the prefix after the resource (plural noun):
 ```
 
 Examples:
-* `/api/v1/users`
-* `/api/v1/tasks`
-* `/api/v1/auth`
+- `/api/v1/users`
+- `/api/v1/tasks`
+- `/api/v1/auth`
 
 Nested resources use the parent prefix:
 
@@ -98,15 +98,15 @@ def add_user():
 
 Split a blueprint into its own package (directory with multiple files) when any of the following apply:
 
-* The blueprint has **more than 10 routes**.
-* The blueprint handles **more than 2 distinct sub-domains** (e.g., a "users" blueprint that also manages teams and invitations).
-* The route file exceeds **300 lines**.
-* Multiple developers frequently work on the same blueprint file.
+- The blueprint has **more than 10 routes**.
+- The blueprint handles **more than 2 distinct sub-domains** (e.g., a "users" blueprint that also manages teams and invitations).
+- The route file exceeds **300 lines**.
+- Multiple developers frequently work on the same blueprint file.
 
 When splitting, move business logic into `services.py` and validation into `schemas.py` so that `routes.py` stays focused on HTTP concerns.
 
 ## Naming Conventions
 
-* Blueprint variable: `{domain}_bp` (e.g., `users_bp`, `auth_bp`).
-* Blueprint name string: matches the domain (`"users"`, `"auth"`).
-* Route function names: use verbs describing the action (`list_users`, `create_user`, `get_user`, `update_user`, `delete_user`).
+- Blueprint variable: `{domain}_bp` (e.g., `users_bp`, `auth_bp`).
+- Blueprint name string: matches the domain (`"users"`, `"auth"`).
+- Route function names: use verbs describing the action (`list_users`, `create_user`, `get_user`, `update_user`, `delete_user`).

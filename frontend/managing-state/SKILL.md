@@ -11,9 +11,9 @@ Choose the right state management tool for each category of state and implement 
 
 ## When to Use
 
-* Adding new state to the application (decide where it lives)
-* Migrating from Redux, MobX, or ad-hoc Context stores to Zustand + TanStack Query
-* Optimizing re-renders caused by poorly scoped state
+- Adding new state to the application (decide where it lives)
+- Migrating from Redux, MobX, or ad-hoc Context stores to Zustand + TanStack Query
+- Optimizing re-renders caused by poorly scoped state
 
 ## Instructions
 
@@ -155,29 +155,29 @@ export function useTheme() {
 
 ## Constraints
 
-<do>
-* Colocate state as close to its usage as possible
-* Use Zustand selectors to subscribe to individual slices
-* Invalidate TanStack Query caches after mutations
-* Type all store state and actions explicitly
-* Use `devtools` middleware in Zustand during development
-</do>
+### ✅ Do
+- Colocate state as close to its usage as possible
+- Use Zustand selectors to subscribe to individual slices
+- Invalidate TanStack Query caches after mutations
+- Type all store state and actions explicitly
+- Use `devtools` middleware in Zustand during development
 
-<dont>
-* Put server/API data into Zustand -- use TanStack Query instead
-* Use React Context for frequently changing values (causes full subtree re-renders)
-* Create one monolithic global store -- split by domain
-* Call `setState` directly from inside render (causes infinite loops)
-* Forget to handle loading and error states for queries
-</dont>
+
+### ❌ Don&#x27;t
+- Put server/API data into Zustand -- use TanStack Query instead
+- Use React Context for frequently changing values (causes full subtree re-renders)
+- Create one monolithic global store -- split by domain
+- Call `setState` directly from inside render (causes infinite loops)
+- Forget to handle loading and error states for queries
+
 
 ## Output Format
 
-* Zustand store files in `src/stores/` with exported selectors
-* TanStack Query hooks in `src/hooks/` wrapping service functions
-* Context providers in `src/contexts/` only for theme, locale, or similar
+- Zustand store files in `src/stores/` with exported selectors
+- TanStack Query hooks in `src/hooks/` wrapping service functions
+- Context providers in `src/contexts/` only for theme, locale, or similar
 
 ## Dependencies
 
-* [frontend/scaffolding-frontend/SKILL.md](../scaffolding-frontend/SKILL.md) -- Zustand and TanStack Query must be installed
-* [frontend/building-components/SKILL.md](../building-components/SKILL.md) -- components consume state via props or hooks
+- [frontend/scaffolding-frontend/SKILL.md](../scaffolding-frontend/SKILL.md) -- Zustand and TanStack Query must be installed
+- [frontend/building-components/SKILL.md](../building-components/SKILL.md) -- components consume state via props or hooks

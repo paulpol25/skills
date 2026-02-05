@@ -136,11 +136,11 @@ _Repeat for each endpoint._
 | updated_at   | Timestamp  | Auto-update              | Last modification time     |
 
 **Relationships**:
-* [Entity] has many [Related Entity]
-* [Entity] belongs to [Related Entity]
+- [Entity] has many [Related Entity]
+- [Entity] belongs to [Related Entity]
 
 **Indexes**:
-* `idx_user_email` on `email` (unique)
+- `idx_user_email` on `email` (unique)
 
 ### [Entity 2]
 

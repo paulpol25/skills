@@ -11,10 +11,10 @@ Implement a secure local authentication system with user registration, login, an
 
 ## When to Use
 
-* Building a new application that needs email/password authentication.
-* Adding local auth alongside existing OAuth providers.
-* Replacing an insecure or legacy authentication system.
-* Any time users need to create accounts and log in with credentials they control.
+- Building a new application that needs email/password authentication.
+- Adding local auth alongside existing OAuth providers.
+- Replacing an insecure or legacy authentication system.
+- Any time users need to create accounts and log in with credentials they control.
 
 ## Instructions
 
@@ -102,9 +102,9 @@ def login():
 
 ### Input Validation
 
-* **Email format**: Use a schema validator to enforce RFC-compliant email addresses.
-* **Password strength**: Minimum 8 characters with complexity requirements. See [password-policy.md](references/password-policy.md) for full policy.
-* **Name**: Non-empty string, max 255 characters.
+- **Email format**: Use a schema validator to enforce RFC-compliant email addresses.
+- **Password strength**: Minimum 8 characters with complexity requirements. See [password-policy.md](references/password-policy.md) for full policy.
+- **Name**: Non-empty string, max 255 characters.
 
 ### Password Hashing with bcrypt
 
@@ -118,23 +118,23 @@ hashed = bcrypt.hashpw(password.encode("utf-8"), salt)
 
 ## Constraints
 
-<do>
-* Hash passwords with bcrypt using a work factor of 12.
-* Validate email format before processing registration.
-* Rate limit registration endpoints to prevent abuse.
-* Return consistent, generic error messages for both login and registration failures.
-* Enforce password complexity requirements as defined in the password policy.
-* Store only the bcrypt hash, never the plaintext password.
-</do>
+### ✅ Do
+- Hash passwords with bcrypt using a work factor of 12.
+- Validate email format before processing registration.
+- Rate limit registration endpoints to prevent abuse.
+- Return consistent, generic error messages for both login and registration failures.
+- Enforce password complexity requirements as defined in the password policy.
+- Store only the bcrypt hash, never the plaintext password.
 
-<dont>
-* Store plaintext passwords under any circumstances.
-* Reveal whether an email address is already registered on login failure.
-* Use MD5 or SHA family hashes for password storage.
-* Allow unlimited registration attempts from a single IP.
-* Return different error messages for "user not found" vs "wrong password".
-* Log plaintext passwords in any application or server logs.
-</dont>
+
+### ❌ Don&#x27;t
+- Store plaintext passwords under any circumstances.
+- Reveal whether an email address is already registered on login failure.
+- Use MD5 or SHA family hashes for password storage.
+- Allow unlimited registration attempts from a single IP.
+- Return different error messages for "user not found" vs "wrong password".
+- Log plaintext passwords in any application or server logs.
+
 
 ## Output Format
 
@@ -160,6 +160,6 @@ hashed = bcrypt.hashpw(password.encode("utf-8"), salt)
 
 ## Dependencies
 
-* [Building API Routes](../../backend/building-api-routes/SKILL.md) -- route structure and request handling.
-* [Designing Schemas](../../storage/designing-schemas/SKILL.md) -- user table schema design.
-* [Password Policy](references/password-policy.md) -- password strength and lockout rules.
+- [Building API Routes](../../backend/building-api-routes/SKILL.md) -- route structure and request handling.
+- [Designing Schemas](../../storage/designing-schemas/SKILL.md) -- user table schema design.
+- [Password Policy](references/password-policy.md) -- password strength and lockout rules.

@@ -9,11 +9,11 @@ Protect data at rest and in transit by encrypting sensitive columns, isolating t
 
 # When to Use
 
-* Storing personally identifiable information (PII) such as email, phone, SSN
-* Building a multi-tenant application that shares database tables across tenants
-* Setting up database access for a new service or environment
-* Defining a backup and disaster recovery strategy
-* Adding audit trails for compliance requirements
+- Storing personally identifiable information (PII) such as email, phone, SSN
+- Building a multi-tenant application that shares database tables across tenants
+- Setting up database access for a new service or environment
+- Defining a backup and disaster recovery strategy
+- Adding audit trails for compliance requirements
 
 # Instructions
 
@@ -170,24 +170,24 @@ CREATE TRIGGER audit_users
 
 # Constraints
 
-<do>
-* Encrypt all PII columns at the application level before storage
-* Use separate database users per service with least-privilege permissions
-* Test backup restoration regularly, at minimum monthly
-* Enable SSL for all database connections
-* Use RLS for multi-tenant data isolation as a defense-in-depth measure
-* Rotate encryption keys on a defined schedule
-* Log all schema changes and privileged operations
-</do>
+### ✅ Do
+- Encrypt all PII columns at the application level before storage
+- Use separate database users per service with least-privilege permissions
+- Test backup restoration regularly, at minimum monthly
+- Enable SSL for all database connections
+- Use RLS for multi-tenant data isolation as a defense-in-depth measure
+- Rotate encryption keys on a defined schedule
+- Log all schema changes and privileged operations
 
-<dont>
-* Store plaintext passwords; always hash with bcrypt or argon2
-* Give the application user superuser or CREATEDB privileges
-* Skip backup restoration testing; untested backups are unreliable
-* Store encryption keys in the database, source code, or version control
-* Rely solely on application-level checks for tenant isolation
-* Disable SSL for convenience, even in development environments
-</dont>
+
+### ❌ Don&#x27;t
+- Store plaintext passwords; always hash with bcrypt or argon2
+- Give the application user superuser or CREATEDB privileges
+- Skip backup restoration testing; untested backups are unreliable
+- Store encryption keys in the database, source code, or version control
+- Rely solely on application-level checks for tenant isolation
+- Disable SSL for convenience, even in development environments
+
 
 # Output Format
 
@@ -195,5 +195,5 @@ Produce SQL scripts for RLS policies, role definitions, and audit triggers. Prod
 
 # Dependencies
 
-* [Designing Schemas](../designing-schemas/SKILL.md) — schema must be defined before security policies are applied
-* [Environment Config](../../shared/environment-config/SKILL.md) — encryption keys and database credentials are managed through environment configuration
+- [Designing Schemas](../designing-schemas/SKILL.md) — schema must be defined before security policies are applied
+- [Environment Config](../../shared/environment-config/SKILL.md) — encryption keys and database credentials are managed through environment configuration

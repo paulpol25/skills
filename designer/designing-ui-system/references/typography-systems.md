@@ -36,23 +36,23 @@ Limit the scale to 5-6 sizes that the project actually needs. Having 10 named si
 
 Good font pairings have **contrast in style** but **similarity in proportions**:
 
-* **Serif heading + Sans-serif body**: classic, high readability. Example: Fraunces + Source Sans 3.
-* **Geometric sans heading + Humanist sans body**: modern, clean. Example: Outfit + Inter.
-* **Slab serif heading + Geometric sans body**: bold, editorial. Example: Zilla Slab + IBM Plex Sans.
+- **Serif heading + Sans-serif body**: classic, high readability. Example: Fraunces + Source Sans 3.
+- **Geometric sans heading + Humanist sans body**: modern, clean. Example: Outfit + Inter.
+- **Slab serif heading + Geometric sans body**: bold, editorial. Example: Zilla Slab + IBM Plex Sans.
 
 ### What Makes Pairings Fail
 
-* **Same classification**: two geometric sans-serifs look redundant, not complementary.
-* **Mismatched x-height**: if the body font has a tall x-height and the heading font has a short one, they'll feel disjointed even at different sizes. Compare the lowercase "x" of both fonts at the same point size.
-* **Too many families**: never use more than 2 font families. If you need a monospace for code, that's a third — but it should complement the other two.
+- **Same classification**: two geometric sans-serifs look redundant, not complementary.
+- **Mismatched x-height**: if the body font has a tall x-height and the heading font has a short one, they'll feel disjointed even at different sizes. Compare the lowercase "x" of both fonts at the same point size.
+- **Too many families**: never use more than 2 font families. If you need a monospace for code, that's a third — but it should complement the other two.
 
 ### Weight Strategy
 
 Limit to 3 weights maximum:
 
-* **Regular (400)**: body text, descriptions, default.
-* **Medium (500)**: labels, navigation, emphasis within body text.
-* **Bold (700)**: headings, buttons, strong emphasis.
+- **Regular (400)**: body text, descriptions, default.
+- **Medium (500)**: labels, navigation, emphasis within body text.
+- **Bold (700)**: headings, buttons, strong emphasis.
 
 If a design needs Semi-bold (600), drop either Medium or Bold — don't use all four. Each added weight is an additional font file download.
 
@@ -72,10 +72,10 @@ Use CSS `clamp()` for fluid scaling between breakpoints without media queries:
 
 ### Guidelines
 
-* Body text: scale minimally (16px mobile to 18px desktop at most).
-* Headings: scale more aggressively (25px mobile to 40px+ desktop).
-* Never let text drop below 14px (0.875rem) for readability.
-* Test at 320px viewport width — if text wraps badly or overflows, sizes are too large.
+- Body text: scale minimally (16px mobile to 18px desktop at most).
+- Headings: scale more aggressively (25px mobile to 40px+ desktop).
+- Never let text drop below 14px (0.875rem) for readability.
+- Test at 320px viewport width — if text wraps badly or overflows, sizes are too large.
 
 ## Line Height Rules
 
@@ -117,9 +117,9 @@ Always include a fallback stack that approximates the custom font's metrics:
 
 ## Anti-Patterns
 
-* **Using 3+ font families**: adds download weight, creates visual noise, and signals indecision.
-* **Inconsistent weight usage**: using 400 in one component and 450 in another. Stick to the defined weight set.
-* **Ignoring x-height differences**: pairing fonts with different x-heights makes size tokens unreliable — "text-base" will look different sizes in each font.
-* **Hardcoding px values**: always use rem for font sizes so users who change their browser default font size are respected.
-* **No fallback stack**: if the custom font fails to load, the browser picks a default that may have wildly different metrics, causing layout shift.
-* **Loading all weights upfront**: only load the weights you actually use. If headings use 700 and body uses 400, don't load 300, 500, 600, 800, 900.
+- **Using 3+ font families**: adds download weight, creates visual noise, and signals indecision.
+- **Inconsistent weight usage**: using 400 in one component and 450 in another. Stick to the defined weight set.
+- **Ignoring x-height differences**: pairing fonts with different x-heights makes size tokens unreliable — "text-base" will look different sizes in each font.
+- **Hardcoding px values**: always use rem for font sizes so users who change their browser default font size are respected.
+- **No fallback stack**: if the custom font fails to load, the browser picks a default that may have wildly different metrics, causing layout shift.
+- **Loading all weights upfront**: only load the weights you actually use. If headings use 700 and body uses 400, don't load 300, 500, 600, 800, 900.

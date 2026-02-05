@@ -11,10 +11,10 @@ Create a well-structured Flask application using the app factory pattern, with m
 
 ## When to Use
 
-* Starting a new Flask project from scratch.
-* Refactoring a single-file Flask app into a production-ready structure.
-* Adding new blueprints or extensions to an existing factory-based app.
-* Setting up configuration management for multiple environments.
+- Starting a new Flask project from scratch.
+- Refactoring a single-file Flask app into a production-ready structure.
+- Adding new blueprints or extensions to an existing factory-based app.
+- Setting up configuration management for multiple environments.
 
 ## Instructions
 
@@ -149,22 +149,22 @@ if __name__ == "__main__":
 
 ## Constraints
 
-<do>
-* Use the app factory pattern with a `create_app()` function.
-* Separate configuration into per-environment classes (Development, Testing, Production).
-* Register all extensions inside the factory via `init_app()`.
-* Use one blueprint per domain area.
-* Keep `run.py` as a thin entry point that only calls `create_app()`.
-* Store extension instances in a dedicated `extensions.py` module.
-</do>
+### ✅ Do
+- Use the app factory pattern with a `create_app()` function.
+- Separate configuration into per-environment classes (Development, Testing, Production).
+- Register all extensions inside the factory via `init_app()`.
+- Use one blueprint per domain area.
+- Keep `run.py` as a thin entry point that only calls `create_app()`.
+- Store extension instances in a dedicated `extensions.py` module.
 
-<dont>
-* Do not use a global `app = Flask(__name__)` at module level.
-* Do not hardcode configuration values; use environment variables for secrets.
-* Do not mix route logic with model definitions.
-* Do not import the app instance directly in blueprints; use `current_app` if needed.
-* Do not initialize extensions with an app instance at declaration time.
-</dont>
+
+### ❌ Don&#x27;t
+- Do not use a global `app = Flask(__name__)` at module level.
+- Do not hardcode configuration values; use environment variables for secrets.
+- Do not mix route logic with model definitions.
+- Do not import the app instance directly in blueprints; use `current_app` if needed.
+- Do not initialize extensions with an app instance at declaration time.
+
 
 ## Output Format
 
@@ -172,6 +172,6 @@ When generating scaffolding, produce each file with its full relative path as a 
 
 ## Dependencies
 
-* [Environment Config](../../shared/environment-config/SKILL.md) -- conventions for managing environment variables and `.env` files.
-* [Blueprint Patterns](references/blueprint-patterns.md) -- reference for blueprint organization and naming.
-* [Config Patterns](references/config-patterns.md) -- reference for configuration class hierarchy.
+- [Environment Config](../../shared/environment-config/SKILL.md) -- conventions for managing environment variables and `.env` files.
+- [Blueprint Patterns](references/blueprint-patterns.md) -- reference for blueprint organization and naming.
+- [Config Patterns](references/config-patterns.md) -- reference for configuration class hierarchy.

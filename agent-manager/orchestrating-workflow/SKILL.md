@@ -11,9 +11,9 @@ Determine the correct execution order for delegated tasks, maximize parallelism 
 
 ## When to Use
 
-* After tasks have been delegated via `agent-manager/delegating-tasks/SKILL.md` and are ready for execution.
-* When a running workflow needs re-evaluation because a task is blocked, failed, or completed early.
-* When a new batch of tasks is added mid-workflow and must be merged into the current execution plan.
+- After tasks have been delegated via `agent-manager/delegating-tasks/SKILL.md` and are ready for execution.
+- When a running workflow needs re-evaluation because a task is blocked, failed, or completed early.
+- When a new batch of tasks is added mid-workflow and must be merged into the current execution plan.
 
 ## Instructions
 
@@ -92,23 +92,23 @@ Once all tasks are `Done`, trigger the review process via `agent-manager/reviewi
 
 ## Constraints
 
-<do>
-* Maximize parallelism — run independent tasks simultaneously whenever possible.
-* Verify all dependencies are satisfied before starting any task.
-* Update task statuses in tasks.md at every transition (Todo -> In Progress -> Done/Blocked).
-* Keep execution waves small and focused — ideally 2-3 tasks per wave.
-* Re-evaluate the execution plan when a task completes or becomes blocked.
-* Document the execution plan before starting.
-</do>
+### ✅ Do
+- Maximize parallelism — run independent tasks simultaneously whenever possible.
+- Verify all dependencies are satisfied before starting any task.
+- Update task statuses in tasks.md at every transition (Todo -> In Progress -> Done/Blocked).
+- Keep execution waves small and focused — ideally 2-3 tasks per wave.
+- Re-evaluate the execution plan when a task completes or becomes blocked.
+- Document the execution plan before starting.
 
-<dont>
-* Start a task before all of its dependencies are marked Done.
-* Run more than 3 agents in parallel — coordination overhead grows exponentially.
-* Ignore blocked tasks — every block must be addressed before the next wave begins.
-* Skip the dependency check — even if you "know" a task is ready, verify in tasks.md.
-* Reorder the DAG without re-evaluating downstream impacts.
-* Assume completion — always confirm status in tasks.md rather than assuming a task finished.
-</dont>
+
+### ❌ Don&#x27;t
+- Start a task before all of its dependencies are marked Done.
+- Run more than 3 agents in parallel — coordination overhead grows exponentially.
+- Ignore blocked tasks — every block must be addressed before the next wave begins.
+- Skip the dependency check — even if you "know" a task is ready, verify in tasks.md.
+- Reorder the DAG without re-evaluating downstream impacts.
+- Assume completion — always confirm status in tasks.md rather than assuming a task finished.
+
 
 ## Output Format
 
@@ -130,5 +130,5 @@ Next: Resolving T4 block before starting Wave 3.
 
 ## Dependencies
 
-* `shared/task-tracking/SKILL.md` — for reading and updating task statuses.
-* `agent-manager/delegating-tasks/SKILL.md` — tasks must be delegated before they can be orchestrated.
+- `shared/task-tracking/SKILL.md` — for reading and updating task statuses.
+- `agent-manager/delegating-tasks/SKILL.md` — tasks must be delegated before they can be orchestrated.

@@ -188,8 +188,8 @@ function withAuth<P extends object>(WrappedComponent: React.ComponentType<P>) {
 ```
 
 **When to use HOCs vs hooks:**
-* Use a **hook** when you need to share logic and the consumer controls the render.
-* Use a **HOC** when you need to conditionally render the entire component (auth gates, feature flags).
+- Use a **hook** when you need to share logic and the consumer controls the render.
+- Use a **HOC** when you need to conditionally render the entire component (auth gates, feature flags).
 
 ## Custom Hook Extraction
 

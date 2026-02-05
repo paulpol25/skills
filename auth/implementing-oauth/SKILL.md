@@ -11,10 +11,10 @@ Integrate OAuth 2.0 Authorization Code flow for GitHub and Google using Authlib.
 
 ## When to Use
 
-* Adding "Sign in with GitHub" or "Sign in with Google" to an application.
-* Supplementing local auth with social login options.
-* Building a developer-focused tool where GitHub login is expected.
-* Any scenario where reducing registration friction is a priority.
+- Adding "Sign in with GitHub" or "Sign in with Google" to an application.
+- Supplementing local auth with social login options.
+- Building a developer-focused tool where GitHub login is expected.
+- Any scenario where reducing registration friction is a priority.
 
 ## Instructions
 
@@ -162,22 +162,22 @@ def google_callback():
 
 ## Constraints
 
-<do>
-* Validate the `state` parameter on every callback to prevent CSRF attacks.
-* Store OAuth tokens securely on the server side, never in frontend storage.
-* Handle account linking by matching verified email addresses.
-* Use HTTPS for all callback URLs in both development and production.
-* Fetch the email separately for GitHub if the profile email is null.
-* Support multiple OAuth providers linked to a single user account.
-</do>
+### ✅ Do
+- Validate the `state` parameter on every callback to prevent CSRF attacks.
+- Store OAuth tokens securely on the server side, never in frontend storage.
+- Handle account linking by matching verified email addresses.
+- Use HTTPS for all callback URLs in both development and production.
+- Fetch the email separately for GitHub if the profile email is null.
+- Support multiple OAuth providers linked to a single user account.
 
-<dont>
-* Skip state parameter validation on the callback endpoint.
-* Store access tokens or refresh tokens in the frontend (localStorage or sessionStorage).
-* Trust an email address from an OAuth provider without checking its verification status.
-* Hard-code client IDs or secrets in source code; use environment variables.
-* Assume the provider will always return an email in the profile response.
-</dont>
+
+### ❌ Don&#x27;t
+- Skip state parameter validation on the callback endpoint.
+- Store access tokens or refresh tokens in the frontend (localStorage or sessionStorage).
+- Trust an email address from an OAuth provider without checking its verification status.
+- Hard-code client IDs or secrets in source code; use environment variables.
+- Assume the provider will always return an email in the profile response.
+
 
 ## Output Format
 
@@ -196,6 +196,6 @@ Redirect to the provider's authorization page.
 
 ## Dependencies
 
-* [Scaffolding Flask](../../backend/scaffolding-flask/SKILL.md) -- Flask application setup and configuration.
-* [Environment Config](../../shared/environment-config/SKILL.md) -- managing client IDs and secrets via environment variables.
-* [Provider Configs](references/provider-configs.md) -- OAuth provider URLs, scopes, and environment variable names.
+- [Scaffolding Flask](../../backend/scaffolding-flask/SKILL.md) -- Flask application setup and configuration.
+- [Environment Config](../../shared/environment-config/SKILL.md) -- managing client IDs and secrets via environment variables.
+- [Provider Configs](references/provider-configs.md) -- OAuth provider URLs, scopes, and environment variable names.

@@ -11,11 +11,11 @@ Set up a comprehensive testing strategy for a Flask application using pytest, wi
 
 ## When to Use
 
-* Setting up testing infrastructure for a new Flask project.
-* Adding test coverage to an existing application.
-* Writing tests for new API endpoints.
-* Reviewing or improving an existing test suite.
-* Establishing testing conventions for a team.
+- Setting up testing infrastructure for a new Flask project.
+- Adding test coverage to an existing application.
+- Writing tests for new API endpoints.
+- Reviewing or improving an existing test suite.
+- Establishing testing conventions for a team.
 
 ## Instructions
 
@@ -238,23 +238,23 @@ pytest tests/integration/test_users_api.py::TestCreateUser::test_create_user_suc
 
 ## Constraints
 
-<do>
-* Test both the happy path and error cases for every endpoint.
-* Use fixtures for app creation, database sessions, and authentication.
-* Isolate each test with a transaction rollback so tests do not affect each other.
-* Use Factory Boy or similar for creating test data with sensible defaults.
-* Separate unit tests (service logic) from integration tests (HTTP endpoints).
-* Run tests with coverage reporting to track gaps.
-</do>
+### ✅ Do
+- Test both the happy path and error cases for every endpoint.
+- Use fixtures for app creation, database sessions, and authentication.
+- Isolate each test with a transaction rollback so tests do not affect each other.
+- Use Factory Boy or similar for creating test data with sensible defaults.
+- Separate unit tests (service logic) from integration tests (HTTP endpoints).
+- Run tests with coverage reporting to track gaps.
 
-<dont>
-* Do not test implementation details such as private methods or internal data structures.
-* Do not share mutable state between tests; each test gets a fresh database session.
-* Do not skip testing error cases (4xx responses, validation failures, edge cases).
-* Do not make tests depend on execution order.
-* Do not hardcode IDs or timestamps that may change between runs.
-* Do not mock the database in integration tests; use a real test database with rollback.
-</dont>
+
+### ❌ Don&#x27;t
+- Do not test implementation details such as private methods or internal data structures.
+- Do not share mutable state between tests; each test gets a fresh database session.
+- Do not skip testing error cases (4xx responses, validation failures, edge cases).
+- Do not make tests depend on execution order.
+- Do not hardcode IDs or timestamps that may change between runs.
+- Do not mock the database in integration tests; use a real test database with rollback.
+
 
 ## Output Format
 
@@ -262,5 +262,5 @@ Generate `tests/conftest.py`, `tests/factories.py`, and at least one test file. 
 
 ## Dependencies
 
-* [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory used to create the test application.
-* [Building API Routes](backend/building-api-routes/SKILL.md) -- routes under test.
+- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory used to create the test application.
+- [Building API Routes](backend/building-api-routes/SKILL.md) -- routes under test.

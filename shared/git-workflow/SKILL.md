@@ -9,10 +9,10 @@ description: The git-workflow skill defines branching conventions, commit messag
 Ensure every code change is traceable, reviewable, and cleanly integrated through consistent branching, commit messages, and pull request practices.
 
 ## When to Use
-* When creating a new branch for a task
-* When committing code changes
-* When opening or updating a pull request
-* When merging completed work back to main
+- When creating a new branch for a task
+- When committing code changes
+- When opening or updating a pull request
+- When merging completed work back to main
 
 ## Instructions
 
@@ -77,20 +77,20 @@ Brief description of what this PR does and why.
 Closes TASK-042.
 
 ## Changes
-* Added POST /api/auth/reset-password endpoint
-* Added token validation middleware
-* Added bcrypt hashing for new passwords
+- Added POST /api/auth/reset-password endpoint
+- Added token validation middleware
+- Added bcrypt hashing for new passwords
 
 ## Testing
-* [ ] Unit tests pass locally
-* [ ] Manual test with valid and expired tokens
-* [ ] Verified 400 response for invalid tokens
+- [ ] Unit tests pass locally
+- [ ] Manual test with valid and expired tokens
+- [ ] Verified 400 response for invalid tokens
 
 ## Checklist
-* [ ] Code follows project style guidelines
-* [ ] Tests cover happy path and edge cases
-* [ ] No secrets or credentials in the diff
-* [ ] Task status updated to In Review
+- [ ] Code follows project style guidelines
+- [ ] Tests cover happy path and edge cases
+- [ ] No secrets or credentials in the diff
+- [ ] Task status updated to In Review
 ```
 
 ### Step 4: Address Review Feedback
@@ -98,24 +98,24 @@ Push new commits for review feedback rather than force-pushing amended commits. 
 
 ## Constraints
 
-<do>
-* Branch from an up-to-date main for every new task
-* Write atomic commits — one logical change per commit
-* Pull and rebase before pushing to catch conflicts early
-* Reference the task ID in the PR description
-* Keep PRs under 500 lines of diff when possible
-</do>
+### ✅ Do
+- Branch from an up-to-date main for every new task
+- Write atomic commits — one logical change per commit
+- Pull and rebase before pushing to catch conflicts early
+- Reference the task ID in the PR description
+- Keep PRs under 500 lines of diff when possible
 
-<dont>
-* Never commit directly to main — always use a feature branch
-* Never force push to a shared branch that others are reviewing
-* Never mix unrelated changes in a single commit or PR
-* Never include generated files, build artifacts, or secrets in commits
-* Never leave a PR description empty
-</dont>
+
+### ❌ Don&#x27;t
+- Never commit directly to main — always use a feature branch
+- Never force push to a shared branch that others are reviewing
+- Never mix unrelated changes in a single commit or PR
+- Never include generated files, build artifacts, or secrets in commits
+- Never leave a PR description empty
+
 
 ## Output Format
 Branches, commits, and PRs created in the project's git repository following the conventions above.
 
 ## Dependencies
-* `../task-tracking/SKILL.md` — task IDs referenced in branch names and PR descriptions
+- `../task-tracking/SKILL.md` — task IDs referenced in branch names and PR descriptions

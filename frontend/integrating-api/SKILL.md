@@ -9,9 +9,9 @@ description: Implement a type-safe API client using TanStack Query and Axios/Fet
 Establish a robust, type-safe communication layer between frontend and backend that handles loading states, errors, caching, and data synchronization seamlessly.
 
 ## When to Use
-* Fetching data for a component.
-* Submitting forms or performing mutations.
-* Syncing server state with client UI.
+- Fetching data for a component.
+- Submitting forms or performing mutations.
+- Syncing server state with client UI.
 
 ## Instructions
 
@@ -89,25 +89,25 @@ if (error) return <ErrorMessage message={error.message} />;
 
 ## Constraints
 
-<do>
-* Use TanStack Query (React Query) for all server state management.
-* Define query keys as arrays (`['resource', id]`) for proper cache invalidation.
-* Type all API responses using Zod or TypeScript interfaces.
-* centralized API client configuration (base URL, interceptors).
-* Handle 401 Unauthorized globally (e.g., redirect to login).
-</do>
+### ✅ Do
+- Use TanStack Query (React Query) for all server state management.
+- Define query keys as arrays (`['resource', id]`) for proper cache invalidation.
+- Type all API responses using Zod or TypeScript interfaces.
+- centralized API client configuration (base URL, interceptors).
+- Handle 401 Unauthorized globally (e.g., redirect to login).
 
-<dont>
-* DO NOT use `useEffect` for data fetching. It leads to race conditions and waterfall requests.
-* DO NOT store server data in global client state (Redux/Zustand) unless absolutely necessary. Use the query cache.
-* DO NOT hardcode API URLs in components.
-* DO NOT ignore loading or error states.
-</dont>
+
+### ❌ Don&#x27;t
+- DO NOT use `useEffect` for data fetching. It leads to race conditions and waterfall requests.
+- DO NOT store server data in global client state (Redux/Zustand) unless absolutely necessary. Use the query cache.
+- DO NOT hardcode API URLs in components.
+- DO NOT ignore loading or error states.
+
 
 ## Output Format
-* `src/lib/api.ts` (client setup)
-* `src/features/*/api/*.ts` (hooks and fetchers)
+- `src/lib/api.ts` (client setup)
+- `src/features/*/api/*.ts` (hooks and fetchers)
 
 ## Dependencies
-* `backend/building-api-routes/SKILL.md` (Defines the API contract)
-* `frontend/managing-state/SKILL.md`
+- `backend/building-api-routes/SKILL.md` (Defines the API contract)
+- `frontend/managing-state/SKILL.md`

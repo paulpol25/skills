@@ -11,20 +11,20 @@ Transform a structured requirements document into a system architecture that def
 
 ## When to Use
 
-* Requirements have been analyzed and a requirements document exists
-* You need to decide on system structure before implementation begins
-* A significant new feature requires architectural changes to an existing system
-* You need to evaluate trade-offs between different architectural approaches
+- Requirements have been analyzed and a requirements document exists
+- You need to decide on system structure before implementation begins
+- A significant new feature requires architectural changes to an existing system
+- You need to evaluate trade-offs between different architectural approaches
 
 ## Instructions
 
 ### 1. Review Requirements
 
 Read the requirements document produced by the `analyzing-requirements` skill. Pay close attention to:
-* Scale and performance targets (non-functional requirements)
-* Number of distinct user roles and their permission models
-* Data entities and their relationships
-* Workflows that cross domain boundaries
+- Scale and performance targets (non-functional requirements)
+- Number of distinct user roles and their permission models
+- Data entities and their relationships
+- Workflows that cross domain boundaries
 
 ### 2. Select an Architecture Pattern
 
@@ -33,9 +33,9 @@ Consult `references/architecture-patterns.md` and choose a pattern based on the 
 ### 3. Define System Components
 
 Break the system into components. Each component should:
-* Own a single domain or bounded context
-* Have a clear public interface (API, event contract, or function signature)
-* Be independently testable
+- Own a single domain or bounded context
+- Have a clear public interface (API, event contract, or function signature)
+- Be independently testable
 
 **Example** -- a typical web application:
 
@@ -60,34 +60,34 @@ Components:
 ### 4. Design API Contracts
 
 Define the API surface between frontend and backend (and between backend services if applicable). For each endpoint, specify:
-* Path, method, and description
-* Request shape (body, params, query)
-* Response shape (success and error)
-* Authentication requirements
+- Path, method, and description
+- Request shape (body, params, query)
+- Response shape (success and error)
+- Authentication requirements
 
 Use the OpenAPI (Swagger) format as the canonical contract when possible.
 
 ### 5. Choose Data Storage Strategy
 
 Based on the data entities from the requirements document:
-* Select a primary database (relational vs document vs key-value)
-* Define indexing strategy for common query patterns
-* Plan for migrations and schema evolution
-* Decide on caching layers if performance requirements demand them
+- Select a primary database (relational vs document vs key-value)
+- Define indexing strategy for common query patterns
+- Plan for migrations and schema evolution
+- Decide on caching layers if performance requirements demand them
 
 ### 6. Plan Authentication and Authorization
 
-* Choose an auth mechanism (session-based, JWT, OAuth2)
-* Define the permission model (RBAC, ABAC, or simple role checks)
-* Map user roles from requirements to permission sets
-* Identify which endpoints or components need which level of access
+- Choose an auth mechanism (session-based, JWT, OAuth2)
+- Define the permission model (RBAC, ABAC, or simple role checks)
+- Map user roles from requirements to permission sets
+- Identify which endpoints or components need which level of access
 
 ### 7. Document Decisions with ADRs
 
 For every significant choice, write a brief Architecture Decision Record:
-* **Context**: What is the situation or constraint?
-* **Decision**: What did you choose?
-* **Consequences**: What are the trade-offs?
+- **Context**: What is the situation or constraint?
+- **Decision**: What did you choose?
+- **Consequences**: What are the trade-offs?
 
 ### 8. Produce the Architecture Document
 
@@ -95,24 +95,24 @@ Compile the architecture into a clear document with diagrams (described in text 
 
 ## Constraints
 
-<do>
-* Start with the simplest architecture that satisfies requirements
-* Define clear boundaries between components
-* Document trade-offs for every significant decision
-* Specify API contracts before implementation starts
-* Consider failure modes and error handling at the architecture level
-* Plan for observability (logging, monitoring, health checks)
-* Revisit the architecture if requirements change significantly
-</do>
+### ✅ Do
+- Start with the simplest architecture that satisfies requirements
+- Define clear boundaries between components
+- Document trade-offs for every significant decision
+- Specify API contracts before implementation starts
+- Consider failure modes and error handling at the architecture level
+- Plan for observability (logging, monitoring, health checks)
+- Revisit the architecture if requirements change significantly
 
-<dont>
-* Over-engineer the initial architecture for hypothetical future scale
-* Choose microservices unless the team size and complexity clearly demand it
-* Skip API contract definition and let frontend/backend evolve independently
-* Introduce distributed systems patterns (event sourcing, CQRS) without strong justification
-* Ignore security architecture and defer it to implementation
-* Make technology choices based on novelty rather than fitness for the problem
-</dont>
+
+### ❌ Don&#x27;t
+- Over-engineer the initial architecture for hypothetical future scale
+- Choose microservices unless the team size and complexity clearly demand it
+- Skip API contract definition and let frontend/backend evolve independently
+- Introduce distributed systems patterns (event sourcing, CQRS) without strong justification
+- Ignore security architecture and defer it to implementation
+- Make technology choices based on novelty rather than fitness for the problem
+
 
 ## Output Format
 
@@ -128,5 +128,5 @@ A Markdown document containing:
 
 ## Dependencies
 
-* `architect/analyzing-requirements/SKILL.md` -- provides the requirements document as input
-* `references/architecture-patterns.md` -- reference for choosing the right pattern
+- `architect/analyzing-requirements/SKILL.md` -- provides the requirements document as input
+- `references/architecture-patterns.md` -- reference for choosing the right pattern
