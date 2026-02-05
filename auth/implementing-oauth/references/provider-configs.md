@@ -40,9 +40,9 @@ oauth.register(
 
 ### Notes
 
-- GitHub does not always include the email in the `/user` response. If the email is null, fetch it from `/user/emails` and select the primary, verified address.
-- Register your OAuth app at: `https://github.com/settings/applications/new`.
-- The "Authorization callback URL" in the GitHub app settings must match your callback route exactly.
+* GitHub does not always include the email in the `/user` response. If the email is null, fetch it from `/user/emails` and select the primary, verified address.
+* Register your OAuth app at: `https://github.com/settings/applications/new`.
+* The "Authorization callback URL" in the GitHub app settings must match your callback route exactly.
 
 ---
 
@@ -80,9 +80,9 @@ oauth.register(
 
 ### Notes
 
-- Google supports OpenID Connect. The `server_metadata_url` allows Authlib to auto-discover endpoints.
-- Register your OAuth app in the Google Cloud Console under **APIs & Services > Credentials**.
-- The `email` field in the user info response is the user's primary Google account email.
+* Google supports OpenID Connect. The `server_metadata_url` allows Authlib to auto-discover endpoints.
+* Register your OAuth app in the Google Cloud Console under **APIs & Services > Credentials**.
+* The `email` field in the user info response is the user's primary Google account email.
 
 ---
 
@@ -97,8 +97,8 @@ All OAuth providers use the following callback URL pattern:
 ```
 
 Examples:
-- GitHub: `/api/v1/auth/github/callback`
-- Google: `/api/v1/auth/google/callback`
+* GitHub: `/api/v1/auth/github/callback`
+* Google: `/api/v1/auth/google/callback`
 
 In production, the full URL must use HTTPS:
 

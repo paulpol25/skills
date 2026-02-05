@@ -11,10 +11,10 @@ Break down user requirements into well-scoped tasks, match each task to the best
 
 ## When to Use
 
-- A new feature request or user story arrives that requires work from multiple agents.
-- A bug report needs investigation and fixes across several system layers.
-- A refactoring effort must be coordinated across the codebase.
-- Any time work needs to be assigned to one or more specialist agents.
+* A new feature request or user story arrives that requires work from multiple agents.
+* A bug report needs investigation and fixes across several system layers.
+* A refactoring effort must be coordinated across the codebase.
+* Any time work needs to be assigned to one or more specialist agents.
 
 ## Instructions
 
@@ -28,9 +28,9 @@ Before decomposing anything, check whether the requirement is clear enough to ac
 
 Example clarifying questions:
 
-- "Should user authentication use OAuth or email/password?"
-- "Is the data model additive, or does it replace the existing schema?"
-- "Which pages need this component: just the dashboard, or site-wide?"
+* "Should user authentication use OAuth or email/password?"
+* "Is the data model additive, or does it replace the existing schema?"
+* "Which pages need this component: just the dashboard, or site-wide?"
 
 ### 3. Decompose the Requirement
 
@@ -50,9 +50,9 @@ Task 5 (Designer):     Create the profile page layout, responsive breakpoints, a
 
 Use `agent-capabilities.md` to select the right agent for each task. Consider:
 
-- The agent's listed skills and technologies.
-- The agent's key strengths.
-- Whether the task falls squarely within one agent's domain.
+* The agent's listed skills and technologies.
+* The agent's key strengths.
+* Whether the task falls squarely within one agent's domain.
 
 ### 5. Write Tasks to tasks.md
 
@@ -60,14 +60,14 @@ For every task, record the following fields in `tasks.md`:
 
 ```markdown
 ## Task: <short title>
-- **Assigned to:** <agent name>
-- **Status:** Todo
-- **Depends on:** <task ID or "none">
-- **Acceptance criteria:**
+* **Assigned to:** <agent name>
+* **Status:** Todo
+* **Depends on:** <task ID or "none">
+* **Acceptance criteria:**
   1. <specific, testable criterion>
   2. <specific, testable criterion>
   3. <specific, testable criterion>
-- **Notes:** <any additional context the agent needs>
+* **Notes:** <any additional context the agent needs>
 ```
 
 ### 6. Set Dependencies Between Tasks
@@ -81,21 +81,21 @@ Once all tasks are written to `tasks.md`, notify the orchestration workflow so e
 ## Constraints
 
 <do>
-- Assign exactly one agent per task.
-- Include at least two acceptance criteria per task.
-- Set explicit dependency links between tasks.
-- Scope each task so it can be completed independently once dependencies are met.
-- Ask clarifying questions when requirements are ambiguous.
-- Reference the API contract or data model by name so agents share a single source of truth.
+* Assign exactly one agent per task.
+* Include at least two acceptance criteria per task.
+* Set explicit dependency links between tasks.
+* Scope each task so it can be completed independently once dependencies are met.
+* Ask clarifying questions when requirements are ambiguous.
+* Reference the API contract or data model by name so agents share a single source of truth.
 </do>
 
 <dont>
-- Assign tasks outside an agent's documented skill set.
-- Create tasks without clearly defined scope and acceptance criteria.
-- Assign multiple agents to a single task.
-- Decompose into more than 7 tasks for a single feature — break the feature into phases instead.
-- Guess at requirements when you can ask the user.
-- Skip reading agent-capabilities.md before assigning work.
+* Assign tasks outside an agent's documented skill set.
+* Create tasks without clearly defined scope and acceptance criteria.
+* Assign multiple agents to a single task.
+* Decompose into more than 7 tasks for a single feature — break the feature into phases instead.
+* Guess at requirements when you can ask the user.
+* Skip reading agent-capabilities.md before assigning work.
 </dont>
 
 ## Output Format
@@ -114,5 +114,5 @@ Delegated 4 tasks:
 
 ## Dependencies
 
-- `shared/task-tracking/SKILL.md` — for the canonical task format and status lifecycle.
-- `agent-manager/delegating-tasks/references/agent-capabilities.md` — the master reference of agent skills used for task-to-agent matching.
+* `shared/task-tracking/SKILL.md` — for the canonical task format and status lifecycle.
+* `agent-manager/delegating-tasks/references/agent-capabilities.md` — the master reference of agent skills used for task-to-agent matching.

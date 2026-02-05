@@ -11,9 +11,9 @@ Set up a new frontend project using Vite, React, and TypeScript with a productio
 
 ## When to Use
 
-- Starting a brand-new frontend application
-- Migrating an existing project to the Vite + React + TypeScript stack
-- Resetting a project that has drifted from the standard structure
+* Starting a brand-new frontend application
+* Migrating an existing project to the Vite + React + TypeScript stack
+* Resetting a project that has drifted from the standard structure
 
 ## Instructions
 
@@ -144,29 +144,29 @@ export default function App() {
 ## Constraints
 
 <do>
-- Use strict TypeScript (`"strict": true` in tsconfig)
-- Configure path aliases (`@/` maps to `src/`)
-- Set up a dev proxy in `vite.config.ts` for API calls
-- Keep all source code inside `src/`
-- Pin major dependency versions in `package.json`
+* Use strict TypeScript (`"strict": true` in tsconfig)
+* Configure path aliases (`@/` maps to `src/`)
+* Set up a dev proxy in `vite.config.ts` for API calls
+* Keep all source code inside `src/`
+* Pin major dependency versions in `package.json`
 </do>
 
 <dont>
-- Eject from Vite or modify internal Vite/Rollup internals
-- Use Create React App (CRA) -- it is deprecated
-- Skip TypeScript strict mode
-- Install CSS-in-JS libraries unless explicitly required
-- Commit `.env` files containing secrets
+* Eject from Vite or modify internal Vite/Rollup internals
+* Use Create React App (CRA) -- it is deprecated
+* Skip TypeScript strict mode
+* Install CSS-in-JS libraries unless explicitly required
+* Commit `.env` files containing secrets
 </dont>
 
 ## Output Format
 
 A fully initialized project directory with:
-- Working `npm run dev` / `npm run build` commands
-- All directories under `src/` created and empty (with `.gitkeep` if needed)
-- Path aliases verified with a sample import
+* Working `npm run dev` / `npm run build` commands
+* All directories under `src/` created and empty (with `.gitkeep` if needed)
+* Path aliases verified with a sample import
 
 ## Dependencies
 
-- [../../shared/environment-config/SKILL.md](../../shared/environment-config/SKILL.md) -- for environment variable conventions
-- [references/project-structures.md](references/project-structures.md) -- canonical directory layout reference
+* [../../shared/environment-config/SKILL.md](../../shared/environment-config/SKILL.md) -- for environment variable conventions
+* [references/project-structures.md](references/project-structures.md) -- canonical directory layout reference

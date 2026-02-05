@@ -127,9 +127,9 @@ CREATE INDEX ix_tasks_status_created ON tasks (status, created_at);
 ```
 
 The index supports queries that use a **leftmost prefix** of its columns:
-- `WHERE status = 'active'` — uses the index
-- `WHERE status = 'active' AND created_at > '2025-01-01'` — uses the index
-- `WHERE created_at > '2025-01-01'` — does NOT use the index (missing leftmost column)
+* `WHERE status = 'active'` — uses the index
+* `WHERE status = 'active' AND created_at > '2025-01-01'` — uses the index
+* `WHERE created_at > '2025-01-01'` — does NOT use the index (missing leftmost column)
 
 ## Partial Indexes
 
@@ -162,8 +162,8 @@ The included columns are stored in the index leaf pages but are not part of the 
 
 Not every column benefits from an index. Avoid indexing when:
 
-- **Small tables** (under ~10,000 rows): Sequential scan is often faster than an index lookup
-- **Rarely queried columns**: The write overhead is not justified
-- **High-write, low-read tables** (e.g., log tables): Indexes slow down every INSERT
-- **Low-cardinality columns** alone (e.g., boolean): B-tree on a boolean is rarely useful unless combined with other columns or used as a partial index condition
-- **Columns updated frequently**: Every update rewrites the index entry
+* **Small tables** (under ~10,000 rows): Sequential scan is often faster than an index lookup
+* **Rarely queried columns**: The write overhead is not justified
+* **High-write, low-read tables** (e.g., log tables): Indexes slow down every INSERT
+* **Low-cardinality columns** alone (e.g., boolean): B-tree on a boolean is rarely useful unless combined with other columns or used as a partial index condition
+* **Columns updated frequently**: Every update rewrites the index entry

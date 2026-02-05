@@ -93,8 +93,8 @@ _Repeat the table structure for each domain area._
 | created_at   | Timestamp  | Auto-set                 | Account creation time          |
 
 **Relationships**:
-- A User _has many_ Posts
-- A User _has one_ Profile
+* A User _has many_ Posts
+* A User _has one_ Profile
 
 ### [Entity Name, e.g., Post]
 
@@ -107,8 +107,8 @@ _Repeat the table structure for each domain area._
 | created_at   | Timestamp  | Auto-set                 | Creation time                  |
 
 **Relationships**:
-- A Post _belongs to_ one User
-- A Post _has many_ Comments
+* A Post _belongs to_ one User
+* A Post _has many_ Comments
 
 _Repeat for each entity._
 

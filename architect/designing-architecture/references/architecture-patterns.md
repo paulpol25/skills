@@ -9,10 +9,10 @@ This document describes common architecture patterns, when to use each one, and 
 A single deployable unit containing all application code.
 
 **When to use**:
-- Small team (1-5 developers)
-- New product with uncertain requirements
-- Simple domain with limited bounded contexts
-- Speed of initial development is the top priority
+* Small team (1-5 developers)
+* New product with uncertain requirements
+* Simple domain with limited bounded contexts
+* Speed of initial development is the top priority
 
 **Typical structure**:
 ```
@@ -25,16 +25,16 @@ A single deployable unit containing all application code.
 ```
 
 **Pros**:
-- Simple to develop, test, and deploy
-- No network overhead between components
-- Easy to refactor across the entire codebase
-- Single database, simple transactions
+* Simple to develop, test, and deploy
+* No network overhead between components
+* Easy to refactor across the entire codebase
+* Single database, simple transactions
 
 **Cons**:
-- Harder to scale individual parts independently
-- Risk of tight coupling without discipline
-- Deployment is all-or-nothing
-- Can become unwieldy as codebase grows past ~50k lines
+* Harder to scale individual parts independently
+* Risk of tight coupling without discipline
+* Deployment is all-or-nothing
+* Can become unwieldy as codebase grows past ~50k lines
 
 ---
 
@@ -43,10 +43,10 @@ A single deployable unit containing all application code.
 A single deployable unit, but internally organized into well-defined modules with explicit boundaries (bounded contexts).
 
 **When to use**:
-- Medium team (3-10 developers)
-- Multiple clear domain areas (e.g., billing, users, inventory)
-- You want the simplicity of a monolith but need internal structure
-- Potential future migration to microservices
+* Medium team (3-10 developers)
+* Multiple clear domain areas (e.g., billing, users, inventory)
+* You want the simplicity of a monolith but need internal structure
+* Potential future migration to microservices
 
 **Typical structure**:
 ```
@@ -68,15 +68,15 @@ A single deployable unit, but internally organized into well-defined modules wit
 ```
 
 **Pros**:
-- Clear internal boundaries reduce coupling
-- Easier to split into services later if needed
-- Still one deployment, one database (simple ops)
-- Teams can own individual modules
+* Clear internal boundaries reduce coupling
+* Easier to split into services later if needed
+* Still one deployment, one database (simple ops)
+* Teams can own individual modules
 
 **Cons**:
-- Requires discipline to maintain module boundaries
-- Shared database can still create coupling
-- Not a silver bullet -- boundaries can erode without enforcement
+* Requires discipline to maintain module boundaries
+* Shared database can still create coupling
+* Not a silver bullet -- boundaries can erode without enforcement
 
 ---
 
@@ -85,9 +85,9 @@ A single deployable unit, but internally organized into well-defined modules wit
 Horizontal layers where each layer depends only on the layer below it.
 
 **When to use**:
-- Traditional web applications with clear separation of concerns
-- Teams familiar with MVC or similar patterns
-- Applications where business logic is the core complexity
+* Traditional web applications with clear separation of concerns
+* Teams familiar with MVC or similar patterns
+* Applications where business logic is the core complexity
 
 **Layers**:
 1. **Presentation Layer** -- UI rendering, HTTP request handling
@@ -96,14 +96,14 @@ Horizontal layers where each layer depends only on the layer below it.
 4. **Database Layer** -- Persistent storage
 
 **Pros**:
-- Well-understood and easy to reason about
-- Clear separation of concerns
-- Each layer can be tested independently
+* Well-understood and easy to reason about
+* Clear separation of concerns
+* Each layer can be tested independently
 
 **Cons**:
-- Can lead to "pass-through" layers with no logic
-- Changes often require touching multiple layers
-- Horizontal slicing can obscure domain boundaries
+* Can lead to "pass-through" layers with no logic
+* Changes often require touching multiple layers
+* Horizontal slicing can obscure domain boundaries
 
 ---
 
@@ -112,10 +112,10 @@ Horizontal layers where each layer depends only on the layer below it.
 Design the API contract before writing any implementation code. The contract becomes the source of truth for both frontend and backend.
 
 **When to use**:
-- Separate frontend and backend teams
-- Multiple clients consuming the same API (web, mobile, third-party)
-- Projects where API stability is critical
-- Public-facing APIs
+* Separate frontend and backend teams
+* Multiple clients consuming the same API (web, mobile, third-party)
+* Projects where API stability is critical
+* Public-facing APIs
 
 **Approach**:
 1. Write an OpenAPI (Swagger) specification
@@ -124,15 +124,15 @@ Design the API contract before writing any implementation code. The contract bec
 4. Use contract tests to verify both sides conform
 
 **Pros**:
-- Frontend and backend can develop in parallel
-- Clear, versioned contract reduces integration bugs
-- Enables automatic documentation and client generation
-- Forces explicit design of the interface
+* Frontend and backend can develop in parallel
+* Clear, versioned contract reduces integration bugs
+* Enables automatic documentation and client generation
+* Forces explicit design of the interface
 
 **Cons**:
-- Upfront investment in spec writing
-- Spec can drift from implementation without CI enforcement
-- Over-specification can slow down early exploration
+* Upfront investment in spec writing
+* Spec can drift from implementation without CI enforcement
+* Over-specification can slow down early exploration
 
 ---
 
@@ -141,27 +141,27 @@ Design the API contract before writing any implementation code. The contract bec
 Components communicate through asynchronous events rather than direct calls.
 
 **When to use**:
-- Operations that do not need an immediate response (email sending, report generation)
-- Multiple consumers need to react to the same event
-- You need to decouple producers from consumers
-- High throughput with bursty workloads
+* Operations that do not need an immediate response (email sending, report generation)
+* Multiple consumers need to react to the same event
+* You need to decouple producers from consumers
+* High throughput with bursty workloads
 
 **Components**:
-- **Event Producers** -- emit events when something happens
-- **Message Broker** -- queues or topics (e.g., RabbitMQ, Redis Streams, Kafka)
-- **Event Consumers** -- subscribe and react to events
+* **Event Producers** -- emit events when something happens
+* **Message Broker** -- queues or topics (e.g., RabbitMQ, Redis Streams, Kafka)
+* **Event Consumers** -- subscribe and react to events
 
 **Pros**:
-- Loose coupling between components
-- Natural fit for async workflows
-- Improved resilience (producers and consumers fail independently)
-- Easy to add new consumers without changing producers
+* Loose coupling between components
+* Natural fit for async workflows
+* Improved resilience (producers and consumers fail independently)
+* Easy to add new consumers without changing producers
 
 **Cons**:
-- Harder to trace and debug (no simple request-response)
-- Eventual consistency introduces complexity
-- Requires infrastructure for message broker
-- Error handling and retry logic add operational overhead
+* Harder to trace and debug (no simple request-response)
+* Eventual consistency introduces complexity
+* Requires infrastructure for message broker
+* Error handling and retry logic add operational overhead
 
 ---
 

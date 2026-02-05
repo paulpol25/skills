@@ -11,11 +11,11 @@ Set up middleware in a Flask application to handle cross-origin requests, enforc
 
 ## When to Use
 
-- Adding CORS support for a frontend on a different origin.
-- Protecting endpoints from abuse with rate limiting.
-- Hardening the application with security headers.
-- Adding structured request logging with unique request IDs.
-- Reviewing or auditing the middleware stack of an existing app.
+* Adding CORS support for a frontend on a different origin.
+* Protecting endpoints from abuse with rate limiting.
+* Hardening the application with security headers.
+* Adding structured request logging with unique request IDs.
+* Reviewing or auditing the middleware stack of an existing app.
 
 ## Instructions
 
@@ -47,10 +47,10 @@ def configure_cors(app):
 ```
 
 Key points:
-- Scope CORS to `/api/*` paths only.
-- Explicitly list allowed methods and headers.
-- Set `max_age` so browsers cache preflight responses.
-- Use `supports_credentials` only if cookies or auth headers are sent cross-origin.
+* Scope CORS to `/api/*` paths only.
+* Explicitly list allowed methods and headers.
+* Set `max_age` so browsers cache preflight responses.
+* Use `supports_credentials` only if cookies or auth headers are sent cross-origin.
 
 ### Rate Limiting
 
@@ -191,20 +191,20 @@ def create_app(config_name=None):
 ## Constraints
 
 <do>
-- Whitelist specific origins for CORS instead of using a wildcard.
-- Set rate limits on authentication and password-related endpoints.
-- Add a unique request ID to every request for tracing.
-- Log the method, path, status code, and duration for each request.
-- Configure middleware inside `create_app()` so it respects the app factory pattern.
-- Use Redis as the backend for rate limit storage in production.
+* Whitelist specific origins for CORS instead of using a wildcard.
+* Set rate limits on authentication and password-related endpoints.
+* Add a unique request ID to every request for tracing.
+* Log the method, path, status code, and duration for each request.
+* Configure middleware inside `create_app()` so it respects the app factory pattern.
+* Use Redis as the backend for rate limit storage in production.
 </do>
 
 <dont>
-- Do not set `CORS origins` to `"*"` in production.
-- Do not skip rate limiting on authentication endpoints; these are the most targeted.
-- Do not expose the `Server` header or framework version in responses.
-- Do not log sensitive data (passwords, tokens, full request bodies) in request logs.
-- Do not rely on in-memory rate limit storage in multi-worker or multi-process deployments.
+* Do not set `CORS origins` to `"*"` in production.
+* Do not skip rate limiting on authentication endpoints; these are the most targeted.
+* Do not expose the `Server` header or framework version in responses.
+* Do not log sensitive data (passwords, tokens, full request bodies) in request logs.
+* Do not rely on in-memory rate limit storage in multi-worker or multi-process deployments.
 </dont>
 
 ## Output Format
@@ -213,4 +213,4 @@ Produce each middleware module as a separate file under `app/middleware/`. Show 
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory where middleware is registered.
+* [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory where middleware is registered.

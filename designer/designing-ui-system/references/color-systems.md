@@ -8,9 +8,9 @@ HSL (Hue, Saturation, Lightness) is the most intuitive model for building palett
 
 Fix the hue. Then create a 10-step scale by varying lightness from ~95% (near-white tint) down to ~10% (near-black shade). Adjust saturation at the extremes:
 
-- **Light end (lightness > 80%)**: reduce saturation by 10-20% to avoid washed-out neon tints.
-- **Dark end (lightness < 25%)**: reduce saturation by 5-15% to avoid muddy over-saturated darks.
-- **Mid-range (40-60% lightness)**: keep saturation at or near the brand value — this is where the color is most "itself."
+* **Light end (lightness > 80%)**: reduce saturation by 10-20% to avoid washed-out neon tints.
+* **Dark end (lightness < 25%)**: reduce saturation by 5-15% to avoid muddy over-saturated darks.
+* **Mid-range (40-60% lightness)**: keep saturation at or near the brand value — this is where the color is most "itself."
 
 ```
 /* Example: brand hue 262 (purple), saturation 65% */
@@ -30,16 +30,16 @@ Fix the hue. Then create a 10-step scale by varying lightness from ~95% (near-wh
 
 Never use pure gray (saturation 0). Desaturate the brand hue to 5-12% saturation. This produces neutrals that feel intentionally connected to the brand:
 
-- Brand hue 262 (purple) at 8% saturation yields cool-purple grays.
-- Brand hue 30 (orange) at 10% saturation yields warm grays.
+* Brand hue 262 (purple) at 8% saturation yields cool-purple grays.
+* Brand hue 30 (orange) at 10% saturation yields warm grays.
 
 This single technique prevents the "generic corporate gray" look.
 
 ### Complementary / Analogous Secondary Colors
 
-- **Analogous** (hue +/- 30): safe, harmonious, low contrast between primary and secondary.
-- **Complementary** (hue + 180): high contrast, energetic, but requires care to avoid clashing.
-- **Split-complementary** (hue + 150 and hue + 210): balanced contrast with more variety.
+* **Analogous** (hue +/- 30): safe, harmonious, low contrast between primary and secondary.
+* **Complementary** (hue + 180): high contrast, energetic, but requires care to avoid clashing.
+* **Split-complementary** (hue + 150 and hue + 210): balanced contrast with more variety.
 
 Pick one strategy and stick with it. Don't mix approaches.
 
@@ -56,18 +56,18 @@ Pick one strategy and stick with it. Don't mix approaches.
 
 ### Practical Pairing Rules
 
-- Text on **light backgrounds**: use shade 700-900 of any hue for body text. Shade 500-600 often fails on white.
-- Text on **colored backgrounds**: white text works on shades 600+ of most hues. Test every combination.
-- **Never rely on color alone** to convey information (e.g., red = error). Always pair with an icon, label, or pattern.
+* Text on **light backgrounds**: use shade 700-900 of any hue for body text. Shade 500-600 often fails on white.
+* Text on **colored backgrounds**: white text works on shades 600+ of most hues. Test every combination.
+* **Never rely on color alone** to convey information (e.g., red = error). Always pair with an icon, label, or pattern.
 
 ## Semantic Colors
 
 Map semantic meaning to palette ranges, but choose values deliberately:
 
-- **Success**: hue 140-160 (green), but not #00FF00. Use muted, accessible greens like hsl(152, 55%, 38%).
-- **Warning**: hue 35-50 (amber/gold), not bright yellow (fails contrast on white). Use hsl(42, 90%, 42%).
-- **Error**: hue 0-10 (red), desaturated enough to not feel alarming in mild contexts. Use hsl(4, 70%, 48%).
-- **Info**: hue 200-220 (blue). Be careful this doesn't clash with a blue primary.
+* **Success**: hue 140-160 (green), but not #00FF00. Use muted, accessible greens like hsl(152, 55%, 38%).
+* **Warning**: hue 35-50 (amber/gold), not bright yellow (fails contrast on white). Use hsl(42, 90%, 42%).
+* **Error**: hue 0-10 (red), desaturated enough to not feel alarming in mild contexts. Use hsl(4, 70%, 48%).
+* **Info**: hue 200-220 (blue). Be careful this doesn't clash with a blue primary.
 
 Each semantic color needs at minimum: base, a light variant (for backgrounds), and a dark variant (for text on light bg).
 
@@ -99,6 +99,6 @@ AI often generates colors independently. A good palette has clear relationships:
 
 ## Tool References
 
-- **Contrast checking**: WebAIM Contrast Checker, Chrome DevTools CSS Overview.
-- **Palette generation from brand color**: Huetone (HSL-based, good for systematic scales), OKLCH Color Picker.
-- **Visualization**: apply the palette to a real UI mockup, not just swatches. Colors behave differently at scale.
+* **Contrast checking**: WebAIM Contrast Checker, Chrome DevTools CSS Overview.
+* **Palette generation from brand color**: Huetone (HSL-based, good for systematic scales), OKLCH Color Picker.
+* **Visualization**: apply the palette to a real UI mockup, not just swatches. Colors behave differently at scale.

@@ -11,9 +11,9 @@ Transform design tokens into usable CSS — either as a Tailwind theme configura
 
 ## When to Use
 
-- After design tokens have been defined (via `designing-ui-system`).
-- When scaffolding a new frontend project that needs its styling foundation.
-- When migrating from ad-hoc styles to a token-based CSS architecture.
+* After design tokens have been defined (via `designing-ui-system`).
+* When scaffolding a new frontend project that needs its styling foundation.
+* When migrating from ad-hoc styles to a token-based CSS architecture.
 
 ## Instructions
 
@@ -25,10 +25,10 @@ CSS flows through four layers, each building on the previous:
 Tokens → Utilities → Components → Layouts
 ```
 
-- **Tokens**: raw design values (colors, spacing, type sizes) as CSS custom properties or Tailwind config.
-- **Utilities**: single-purpose classes (Tailwind provides these; in vanilla CSS, define sparingly).
-- **Components**: multi-property styles for repeated UI patterns (button, card, badge). Only extract when a pattern repeats 3+ times.
-- **Layouts**: page-level grid and container styles.
+* **Tokens**: raw design values (colors, spacing, type sizes) as CSS custom properties or Tailwind config.
+* **Utilities**: single-purpose classes (Tailwind provides these; in vanilla CSS, define sparingly).
+* **Components**: multi-property styles for repeated UI patterns (button, card, badge). Only extract when a pattern repeats 3+ times.
+* **Layouts**: page-level grid and container styles.
 
 ### 2. Map Tokens to Tailwind Configuration
 
@@ -153,10 +153,10 @@ Use the `class` strategy (not `media`) for dark mode in Tailwind. This allows pr
 ```
 
 Dark mode rules:
-- Swap the token values at the custom property level, not in individual components.
-- Reduce color saturation by 10-20% for dark mode.
-- Don't use pure black (#000) as dark background — use neutral-900 (slightly tinted).
-- Shadows are ineffective on dark backgrounds; use subtle borders or elevation instead.
+* Swap the token values at the custom property level, not in individual components.
+* Reduce color saturation by 10-20% for dark mode.
+* Don't use pure black (#000) as dark background — use neutral-900 (slightly tinted).
+* Shadows are ineffective on dark backgrounds; use subtle borders or elevation instead.
 
 ### 6. Responsive Utilities
 
@@ -179,27 +179,27 @@ For project-specific responsive patterns that Tailwind doesn't cover, add custom
 ## Constraints
 
 <do>
-- Use design tokens as the single source of truth. Every color, size, and spacing value in CSS should trace back to a token.
-- Extend the Tailwind theme rather than overriding it. Use `theme.extend` so default utilities remain available.
-- Store token values as CSS custom properties so they work outside Tailwind contexts.
-- Prefer Tailwind utility classes in markup over custom CSS for one-off styles.
-- Extract component classes only when a utility pattern repeats 3+ times for the same semantic component.
-- Use the class strategy for dark mode so it can be toggled programmatically.
-- Include line-height in font-size token definitions so they travel together.
-- Use HSL values without the `hsl()` wrapper in custom properties so Tailwind's opacity modifier syntax works.
+* Use design tokens as the single source of truth. Every color, size, and spacing value in CSS should trace back to a token.
+* Extend the Tailwind theme rather than overriding it. Use `theme.extend` so default utilities remain available.
+* Store token values as CSS custom properties so they work outside Tailwind contexts.
+* Prefer Tailwind utility classes in markup over custom CSS for one-off styles.
+* Extract component classes only when a utility pattern repeats 3+ times for the same semantic component.
+* Use the class strategy for dark mode so it can be toggled programmatically.
+* Include line-height in font-size token definitions so they travel together.
+* Use HSL values without the `hsl()` wrapper in custom properties so Tailwind's opacity modifier syntax works.
 </do>
 
 <dont>
-- DO NOT write vanilla CSS that duplicates what Tailwind utilities already provide. If you're writing `.mt-4 { margin-top: 1rem; }` alongside Tailwind, something has gone wrong.
-- DO NOT use `@apply` for everything. Extracting every element into an `@apply` class defeats the purpose of utility-first CSS — you end up maintaining a parallel stylesheet with none of the benefits.
-- DO NOT generate CSS without connecting it to the design token system. Hardcoded hex values, pixel sizes, or magic numbers in CSS files mean the tokens are being bypassed.
-- DO NOT use `!important`. If specificity conflicts exist, fix the cascade order or layer structure instead. The only acceptable `!important` is inside utility definitions (which Tailwind handles internally).
-- DO NOT create a component class for a pattern that appears only once or twice. Use utilities inline instead. Premature extraction creates classes no one remembers exist.
-- DO NOT override Tailwind's default `theme` (without `extend`). This removes useful defaults like `auto`, `full`, `screen`, and fractional spacing values.
-- DO NOT generate a massive CSS file with "just in case" component classes. Every class should correspond to a component that exists in the UI right now.
-- DO NOT mix design paradigms: pick either utility-first (Tailwind) or BEM/SMACSS (vanilla). Mixing both creates confusion about where styles live and which approach to use for new components.
-- DO NOT use Tailwind's `@apply` with responsive or state variants (`@apply hover:bg-blue-500`). This doesn't work as expected and creates brittle CSS. Apply state styles as separate declarations or use utilities in markup.
-- DO NOT ignore the CSS cascade order. Load styles in order: reset/base -> tokens -> utilities -> components -> layouts. Misordered layers cause specificity fights that lead to `!important` hacks.
+* DO NOT write vanilla CSS that duplicates what Tailwind utilities already provide. If you're writing `.mt-4 { margin-top: 1rem; }` alongside Tailwind, something has gone wrong.
+* DO NOT use `@apply` for everything. Extracting every element into an `@apply` class defeats the purpose of utility-first CSS — you end up maintaining a parallel stylesheet with none of the benefits.
+* DO NOT generate CSS without connecting it to the design token system. Hardcoded hex values, pixel sizes, or magic numbers in CSS files mean the tokens are being bypassed.
+* DO NOT use `!important`. If specificity conflicts exist, fix the cascade order or layer structure instead. The only acceptable `!important` is inside utility definitions (which Tailwind handles internally).
+* DO NOT create a component class for a pattern that appears only once or twice. Use utilities inline instead. Premature extraction creates classes no one remembers exist.
+* DO NOT override Tailwind's default `theme` (without `extend`). This removes useful defaults like `auto`, `full`, `screen`, and fractional spacing values.
+* DO NOT generate a massive CSS file with "just in case" component classes. Every class should correspond to a component that exists in the UI right now.
+* DO NOT mix design paradigms: pick either utility-first (Tailwind) or BEM/SMACSS (vanilla). Mixing both creates confusion about where styles live and which approach to use for new components.
+* DO NOT use Tailwind's `@apply` with responsive or state variants (`@apply hover:bg-blue-500`). This doesn't work as expected and creates brittle CSS. Apply state styles as separate declarations or use utilities in markup.
+* DO NOT ignore the CSS cascade order. Load styles in order: reset/base -> tokens -> utilities -> components -> layouts. Misordered layers cause specificity fights that lead to `!important` hacks.
 </dont>
 
 ## Output Format
@@ -211,5 +211,5 @@ For project-specific responsive patterns that Tailwind doesn't cover, add custom
 
 ## Dependencies
 
-- `designer/designing-ui-system/SKILL.md` — provides the design tokens that this skill consumes.
-- `../../frontend/scaffolding-frontend/SKILL.md` — provides the project structure where these CSS files live.
+* `designer/designing-ui-system/SKILL.md` — provides the design tokens that this skill consumes.
+* `../../frontend/scaffolding-frontend/SKILL.md` — provides the project structure where these CSS files live.

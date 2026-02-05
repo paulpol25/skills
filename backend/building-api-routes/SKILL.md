@@ -11,10 +11,10 @@ Create RESTful API endpoints in Flask that follow consistent URL conventions, va
 
 ## When to Use
 
-- Adding a new resource endpoint (CRUD) to an existing Flask app.
-- Designing the API contract for a new feature.
-- Refactoring existing routes to follow RESTful conventions.
-- Adding pagination, filtering, or sorting to list endpoints.
+* Adding a new resource endpoint (CRUD) to an existing Flask app.
+* Designing the API contract for a new feature.
+* Refactoring existing routes to follow RESTful conventions.
+* Adding pagination, filtering, or sorting to list endpoints.
 
 ## Instructions
 
@@ -82,9 +82,9 @@ Every endpoint returns a consistent JSON envelope:
 }
 ```
 
-- **Success responses** populate `data` and optionally `meta` (pagination info, counts).
-- **Error responses** populate `error` with `code`, `message`, and optional `details`.
-- Never mix shapes: a response is either a success or an error, not both.
+* **Success responses** populate `data` and optionally `meta` (pagination info, counts).
+* **Error responses** populate `error` with `code`, `message`, and optional `details`.
+* Never mix shapes: a response is either a success or an error, not both.
 
 ### Pagination
 
@@ -206,20 +206,20 @@ def delete_user(user_id):
 ## Constraints
 
 <do>
-- Validate all incoming request data with a schema before processing.
-- Use a consistent JSON response envelope (`data`, `error`, `meta`).
-- Return proper HTTP status codes: 200, 201, 204, 400, 404, 422, 500.
-- Use plural nouns for resource URLs.
-- Cap pagination limits to prevent abuse (e.g., max 100 per page).
-- Include pagination metadata in list responses.
+* Validate all incoming request data with a schema before processing.
+* Use a consistent JSON response envelope (`data`, `error`, `meta`).
+* Return proper HTTP status codes: 200, 201, 204, 400, 404, 422, 500.
+* Use plural nouns for resource URLs.
+* Cap pagination limits to prevent abuse (e.g., max 100 per page).
+* Include pagination metadata in list responses.
 </do>
 
 <dont>
-- Do not use verbs in URLs (no `/api/v1/getUsers` or `/api/v1/createUser`).
-- Do not return different response shapes from different endpoints.
-- Do not expose internal database IDs without a clear reason.
-- Do not allow unbounded queries -- always paginate list endpoints.
-- Do not put business logic directly in route handlers; delegate to service functions.
+* Do not use verbs in URLs (no `/api/v1/getUsers` or `/api/v1/createUser`).
+* Do not return different response shapes from different endpoints.
+* Do not expose internal database IDs without a clear reason.
+* Do not allow unbounded queries -- always paginate list endpoints.
+* Do not put business logic directly in route handlers; delegate to service functions.
 </dont>
 
 ## Output Format
@@ -228,5 +228,5 @@ When generating routes, produce the route file, the schema file, and the service
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory and blueprint registration.
-- [Task Tracking](../../shared/task-tracking/SKILL.md) -- track progress when building multiple endpoints.
+* [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory and blueprint registration.
+* [Task Tracking](../../shared/task-tracking/SKILL.md) -- track progress when building multiple endpoints.

@@ -9,9 +9,9 @@ description: Configure Vite to build optimized production assets, handling code 
 Produce a highly optimized, minified set of static assets (JS, CSS, images) ready for deployment to a CDN or static host, with optimal caching strategies.
 
 ## When to Use
-- Setting up the build pipeline.
-- Optimizing application load time (LCP, TTI).
-- Configuring environment-specific build variables.
+* Setting up the build pipeline.
+* Optimizing application load time (LCP, TTI).
+* Configuring environment-specific build variables.
 
 ## Instructions
 
@@ -48,15 +48,15 @@ export default defineConfig({
 ### 2. Environment Variables
 Use `.env` files for build-time configuration.
 
-- `.env.development`: API endpoints for local dev.
-- `.env.production`: API endpoints for prod.
+* `.env.development`: API endpoints for local dev.
+* `.env.production`: API endpoints for prod.
 
 Access them via `import.meta.env.VITE_API_URL`.
 
 ### 3. Asset Optimization
-- **Images**: Use modern formats (WebP/AVIF). Vite handles imports automatically.
-- **Fonts**: Self-host fonts when possible or use a performant CDN.
-- **SVGs**: Import as components using plugin like `vite-plugin-svgr` or strictly as URLs.
+* **Images**: Use modern formats (WebP/AVIF). Vite handles imports automatically.
+* **Fonts**: Self-host fonts when possible or use a performant CDN.
+* **SVGs**: Import as components using plugin like `vite-plugin-svgr` or strictly as URLs.
 
 ### 4. Build Scripts
 Ensure `package.json` has standard scripts:
@@ -73,23 +73,23 @@ Always run `tsc` (TypeScript Compiler) before `vite build` to catch type errors 
 ## Constraints
 
 <do>
-- Prefix all public environment variables with `VITE_`.
-- Run type checking (`tsc`) before the build step.
-- Use `manualChunks` to split large vendor libraries if the main bundle exceeds 500kb.
-- Configure clean build output directories (`emptyOutDir: true`).
-- Use path aliases (`@/components`) to simplify imports and refactoring.
+* Prefix all public environment variables with `VITE_`.
+* Run type checking (`tsc`) before the build step.
+* Use `manualChunks` to split large vendor libraries if the main bundle exceeds 500kb.
+* Configure clean build output directories (`emptyOutDir: true`).
+* Use path aliases (`@/components`) to simplify imports and refactoring.
 </do>
 
 <dont>
-- DO NOT include secrets (private API keys) in client-side bundles. They are visible to everyone.
-- DO NOT rely on default browser caching for `index.html`; ensure the server sets `Cache-Control: no-cache`.
-- DO NOT leave `sourcemap: true` in production unless you have a private error reporting service.
-- DO NOT import unused heavy libraries (e.g., all of lodash). Import specific functions.
+* DO NOT include secrets (private API keys) in client-side bundles. They are visible to everyone.
+* DO NOT rely on default browser caching for `index.html`; ensure the server sets `Cache-Control: no-cache`.
+* DO NOT leave `sourcemap: true` in production unless you have a private error reporting service.
+* DO NOT import unused heavy libraries (e.g., all of lodash). Import specific functions.
 </dont>
 
 ## Output Format
-- `dist/` folder containing `index.html`, `assets/*.js`, `assets/*.css`.
-- `vite.config.ts` configuration.
+* `dist/` folder containing `index.html`, `assets/*.js`, `assets/*.css`.
+* `vite.config.ts` configuration.
 
 ## Dependencies
-- `frontend/scaffolding-frontend/SKILL.md`
+* `frontend/scaffolding-frontend/SKILL.md`

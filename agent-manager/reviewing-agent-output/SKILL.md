@@ -11,10 +11,10 @@ Ensure every task deliverable meets its acceptance criteria, is consistent with 
 
 ## When to Use
 
-- An agent marks a task as `In Review` in `tasks.md`.
-- A workflow wave completes and outputs need validation before the next wave begins.
-- Final integration review after all tasks for a feature are complete.
-- When a previously rejected task is resubmitted with fixes.
+* An agent marks a task as `In Review` in `tasks.md`.
+* A workflow wave completes and outputs need validation before the next wave begins.
+* Final integration review after all tasks for a feature are complete.
+* When a previously rejected task is resubmitted with fixes.
 
 ## Instructions
 
@@ -22,18 +22,18 @@ Ensure every task deliverable meets its acceptance criteria, is consistent with 
 
 Before reviewing, collect everything you need:
 
-- Read the task entry in `tasks.md` — especially the acceptance criteria and dependencies.
-- Read the agent's output files (code, config, documentation).
-- Read related tasks to understand cross-agent contracts (API shapes, data models, shared types).
+* Read the task entry in `tasks.md` — especially the acceptance criteria and dependencies.
+* Read the agent's output files (code, config, documentation).
+* Read related tasks to understand cross-agent contracts (API shapes, data models, shared types).
 
 ### 2. Run the Review Checklist
 
 Evaluate every deliverable against these four dimensions:
 
-- **Completeness** — Walk through each acceptance criterion one by one. A single failing criterion means the task cannot be approved.
-- **Correctness** — Check for off-by-one errors, null handling, edge cases. Verify business logic matches the requirement and error handling covers expected failure modes.
-- **Consistency** — Naming conventions match project standards, code style follows established patterns, shared types are used (not redefined).
-- **Test Coverage** — Unit tests exist for core logic, integration tests for cross-boundary interactions, and edge cases and error paths are tested.
+* **Completeness** — Walk through each acceptance criterion one by one. A single failing criterion means the task cannot be approved.
+* **Correctness** — Check for off-by-one errors, null handling, edge cases. Verify business logic matches the requirement and error handling covers expected failure modes.
+* **Consistency** — Naming conventions match project standards, code style follows established patterns, shared types are used (not redefined).
+* **Test Coverage** — Unit tests exist for core logic, integration tests for cross-boundary interactions, and edge cases and error paths are tested.
 
 ### 3. Verify Cross-Agent Contracts
 
@@ -85,21 +85,21 @@ After all tasks for a feature are individually approved, run one final check: ve
 ## Constraints
 
 <do>
-- Check every acceptance criterion individually — do not batch-approve.
-- Verify integration points between agents before approving downstream tasks.
-- Provide specific, actionable feedback when requesting changes.
-- Test the output yourself when possible — do not rely solely on reading the code.
-- Re-review after changes are applied — never auto-approve a resubmission.
-- Record all review verdicts in tasks.md for traceability.
+* Check every acceptance criterion individually — do not batch-approve.
+* Verify integration points between agents before approving downstream tasks.
+* Provide specific, actionable feedback when requesting changes.
+* Test the output yourself when possible — do not rely solely on reading the code.
+* Re-review after changes are applied — never auto-approve a resubmission.
+* Record all review verdicts in tasks.md for traceability.
 </do>
 
 <dont>
-- Approve a task without checking every acceptance criterion.
-- Skip integration verification between agents — contract mismatches are the most common source of bugs.
-- Modify the agent's code directly — always send it back to the assigned agent with feedback.
-- Approve a task that has no tests, unless the task explicitly does not require them.
-- Batch-approve an entire wave without checking each task individually.
-- Provide vague feedback like "needs improvement" — always specify what and why.
+* Approve a task without checking every acceptance criterion.
+* Skip integration verification between agents — contract mismatches are the most common source of bugs.
+* Modify the agent's code directly — always send it back to the assigned agent with feedback.
+* Approve a task that has no tests, unless the task explicitly does not require them.
+* Batch-approve an entire wave without checking each task individually.
+* Provide vague feedback like "needs improvement" — always specify what and why.
 </dont>
 
 ## Output Format
@@ -121,5 +121,5 @@ Each review produces a verdict block recorded in `tasks.md`:
 
 ## Dependencies
 
-- `shared/code-review/SKILL.md` — for general code review conventions and feedback format.
-- `agent-manager/delegating-tasks/SKILL.md` — for reading acceptance criteria and task context.
+* `shared/code-review/SKILL.md` — for general code review conventions and feedback format.
+* `agent-manager/delegating-tasks/SKILL.md` — for reading acceptance criteria and task context.

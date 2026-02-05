@@ -9,9 +9,9 @@ description: Manage the `tasks.md` ledger with strict locking and collision avoi
 Maintain a conflict-free, "Single Source of Truth" ledger (`tasks.md`). Prevent multiple agents from working on the same task or stomping on each other's updates.
 
 ## When to Use
-- **STARTING**: Before writing a single line of code.
-- **UPDATING**: When you hit a blocker or finish a sub-step.
-- **COMPLETING**: When acceptance criteria are met.
+* **STARTING**: Before writing a single line of code.
+* **UPDATING**: When you hit a blocker or finish a sub-step.
+* **COMPLETING**: When acceptance criteria are met.
 
 ## Instructions
 
@@ -45,33 +45,33 @@ Build the POST /api/auth/reset-password endpoint.
 ```
 
 ### 3. Creating Tasks (Decomposition)
-- **Granularity**: A task should take 10-60 minutes. If it takes longer, break it down.
-- **Linking**: If Task B needs Task A, list `TASK-XXX` in "Dependencies".
-- **No Duplicates**: Grep for keywords before creating.
+* **Granularity**: A task should take 10-60 minutes. If it takes longer, break it down.
+* **Linking**: If Task B needs Task A, list `TASK-XXX` in "Dependencies".
+* **No Duplicates**: Grep for keywords before creating.
 
 ### 4. Status Transitions
-- `Todo` -> `In Progress`: **The Lock**.
-- `In Progress` -> `Blocked`: If waiting on another agent/task. **Explain WHY in Notes.**
-- `In Progress` -> `In Review`: Code is written, tests pass.
-- `In Review` -> `Done`: Code is merged.
+* `Todo` -> `In Progress`: **The Lock**.
+* `In Progress` -> `Blocked`: If waiting on another agent/task. **Explain WHY in Notes.**
+* `In Progress` -> `In Review`: Code is written, tests pass.
+* `In Review` -> `Done`: Code is merged.
 
 ## Constraints
 
 <do>
-- **ATOMIC UPDATES**: Update `tasks.md` in a separate tool call from your code changes if possible, or at least be very careful not to hallucinate the file content.
-- **TIMESTAMP**: You MUST update the `Updated: YYYY-MM-DD` field every time you touch a task.
-- **RESPECT LOCKS**: Never edit a task assigned to another agent unless you are the `Agent Manager`.
-- **SELF-ASSIGN**: Never work on a task labeled `Status: Todo` without first changing it to `In Progress` and assigning yourself.
+* **ATOMIC UPDATES**: Update `tasks.md` in a separate tool call from your code changes if possible, or at least be very careful not to hallucinate the file content.
+* **TIMESTAMP**: You MUST update the `Updated: YYYY-MM-DD` field every time you touch a task.
+* **RESPECT LOCKS**: Never edit a task assigned to another agent unless you are the `Agent Manager`.
+* **SELF-ASSIGN**: Never work on a task labeled `Status: Todo` without first changing it to `In Progress` and assigning yourself.
 </do>
 
 <dont>
-- DO NOT "infer" you have the task. Claim it explicitly.
-- DO NOT delete tasks. Mark them as `Status: Cancelled` instead.
-- DO NOT leave `Assigned Agent` empty for `In Progress` tasks.
+* DO NOT "infer" you have the task. Claim it explicitly.
+* DO NOT delete tasks. Mark them as `Status: Cancelled` instead.
+* DO NOT leave `Assigned Agent` empty for `In Progress` tasks.
 </dont>
 
 ## Output Format
-- Updates to `tasks.md`.
+* Updates to `tasks.md`.
 
 ## Dependencies
-- `templates/task-template.md`
+* `templates/task-template.md`

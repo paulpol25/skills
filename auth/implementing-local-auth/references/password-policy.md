@@ -9,31 +9,31 @@ This document defines the password policy for local authentication. It follows N
 
 ## Length Requirements
 
-- **Minimum length**: 8 characters.
-- **No maximum length enforced by the application**. However, bcrypt truncates input at 72 bytes. Passwords longer than 72 bytes are accepted but only the first 72 bytes influence the hash. This must be documented in user-facing help text.
-- If support for passwords longer than 72 bytes is needed, pre-hash the password with SHA-256 before passing it to bcrypt.
+* **Minimum length**: 8 characters.
+* **No maximum length enforced by the application**. However, bcrypt truncates input at 72 bytes. Passwords longer than 72 bytes are accepted but only the first 72 bytes influence the hash. This must be documented in user-facing help text.
+* If support for passwords longer than 72 bytes is needed, pre-hash the password with SHA-256 before passing it to bcrypt.
 
 ## Complexity Requirements
 
 At minimum, a valid password must contain:
 
-- At least **1 uppercase letter** (A-Z).
-- At least **1 lowercase letter** (a-z).
-- At least **1 digit** (0-9).
+* At least **1 uppercase letter** (A-Z).
+* At least **1 lowercase letter** (a-z).
+* At least **1 digit** (0-9).
 
 Special characters are encouraged but not required.
 
 ## Allowed Characters
 
-- All printable ASCII characters (codes 32-126) are permitted.
-- Unicode characters are permitted. The application must handle UTF-8 encoding consistently when hashing.
-- No characters are explicitly forbidden.
+* All printable ASCII characters (codes 32-126) are permitted.
+* Unicode characters are permitted. The application must handle UTF-8 encoding consistently when hashing.
+* No characters are explicitly forbidden.
 
 ## Common Password Check
 
-- Every password must be checked against a list of the **top 10,000 most common passwords**.
-- If the password appears in this list, registration must be rejected with a message such as: "This password is too common. Please choose a different password."
-- The common password list should be loaded once at application startup and stored in memory for fast lookups using a set.
+* Every password must be checked against a list of the **top 10,000 most common passwords**.
+* If the password appears in this list, registration must be rejected with a message such as: "This password is too common. Please choose a different password."
+* The common password list should be loaded once at application startup and stored in memory for fast lookups using a set.
 
 ```python
 import pathlib
@@ -51,15 +51,15 @@ def is_common_password(password: str) -> bool:
 
 ## Password Rotation
 
-- **No forced password rotation**. This follows NIST 800-63B section 5.1.1.2, which recommends against periodic password changes. Forced rotation leads to weaker passwords as users make predictable incremental changes.
-- Passwords should only be changed when there is evidence of compromise.
+* **No forced password rotation**. This follows NIST 800-63B section 5.1.1.2, which recommends against periodic password changes. Forced rotation leads to weaker passwords as users make predictable incremental changes.
+* Passwords should only be changed when there is evidence of compromise.
 
 ## Account Lockout
 
-- After **5 consecutive failed login attempts**, the account is locked for **15 minutes**.
-- The lockout is per-account, not per-IP, to prevent attackers from cycling through IPs.
-- Failed attempt counters reset after a successful login.
-- Locked accounts return the same generic "Invalid credentials" error to avoid revealing lockout state to attackers.
+* After **5 consecutive failed login attempts**, the account is locked for **15 minutes**.
+* The lockout is per-account, not per-IP, to prevent attackers from cycling through IPs.
+* Failed attempt counters reset after a successful login.
+* Locked accounts return the same generic "Invalid credentials" error to avoid revealing lockout state to attackers.
 
 ```python
 from datetime import datetime, timedelta
@@ -89,12 +89,12 @@ def reset_failed_attempts(user):
 
 ## Password Reset
 
-- Password reset is initiated via an email containing a one-time-use token.
-- The reset token **expires after 1 hour**.
-- Tokens are stored as hashed values in the database (using SHA-256), not in plaintext.
-- The reset link format: `https://{domain}/reset-password?token={token}`
-- After a successful reset, all existing sessions for that user must be invalidated.
-- The reset endpoint must be rate-limited (3 requests per hour per email address).
+* Password reset is initiated via an email containing a one-time-use token.
+* The reset token **expires after 1 hour**.
+* Tokens are stored as hashed values in the database (using SHA-256), not in plaintext.
+* The reset link format: `https://{domain}/reset-password?token={token}`
+* After a successful reset, all existing sessions for that user must be invalidated.
+* The reset endpoint must be rate-limited (3 requests per hour per email address).
 
 ```python
 import secrets

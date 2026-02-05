@@ -11,11 +11,11 @@ Build a centralized error handling system for a Flask API that uses custom excep
 
 ## When to Use
 
-- Setting up error handling in a new Flask API.
-- Replacing ad-hoc try/except blocks with a centralized pattern.
-- Adding structured error responses to an existing application.
-- Improving error logging and observability.
-- Onboarding to a codebase that needs consistent error treatment.
+* Setting up error handling in a new Flask API.
+* Replacing ad-hoc try/except blocks with a centralized pattern.
+* Adding structured error responses to an existing application.
+* Improving error logging and observability.
+* Onboarding to a codebase that needs consistent error treatment.
 
 ## Instructions
 
@@ -151,9 +151,9 @@ All error responses follow this structure:
 }
 ```
 
-- `code` is a machine-readable string that clients can switch on.
-- `message` is a human-readable summary.
-- `details` is optional and holds field-level or context-specific information.
+* `code` is a machine-readable string that clients can switch on.
+* `message` is a human-readable summary.
+* `details` is optional and holds field-level or context-specific information.
 
 ### Raising Exceptions in Application Code
 
@@ -216,21 +216,21 @@ def create_app(config_name=None):
 ## Constraints
 
 <do>
-- Use custom exception classes that inherit from a common `APIError` base.
-- Register global error handlers for `APIError`, 404, 405, and 500.
-- Return consistent JSON error responses with `code`, `message`, and optional `details`.
-- Log all 500-level errors with `logger.exception()` to capture stack traces.
-- Include the request ID and endpoint in error log context.
-- Use specific exception subclasses (`NotFoundError`, `ValidationError`) instead of generic exceptions.
+* Use custom exception classes that inherit from a common `APIError` base.
+* Register global error handlers for `APIError`, 404, 405, and 500.
+* Return consistent JSON error responses with `code`, `message`, and optional `details`.
+* Log all 500-level errors with `logger.exception()` to capture stack traces.
+* Include the request ID and endpoint in error log context.
+* Use specific exception subclasses (`NotFoundError`, `ValidationError`) instead of generic exceptions.
 </do>
 
 <dont>
-- Do not catch bare `Exception` in route handlers; let errors propagate to the global handler.
-- Do not expose stack traces or internal error details to API clients.
-- Do not return HTML error pages from an API; always return JSON.
-- Do not silently swallow exceptions without logging.
-- Do not return 200 status codes for errors.
-- Do not use generic error messages that give no indication of what went wrong.
+* Do not catch bare `Exception` in route handlers; let errors propagate to the global handler.
+* Do not expose stack traces or internal error details to API clients.
+* Do not return HTML error pages from an API; always return JSON.
+* Do not silently swallow exceptions without logging.
+* Do not return 200 status codes for errors.
+* Do not use generic error messages that give no indication of what went wrong.
 </dont>
 
 ## Output Format
@@ -239,5 +239,5 @@ Generate `app/exceptions.py` and `app/error_handlers.py` as separate files. Show
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory where error handlers are registered.
-- [Building API Routes](backend/building-api-routes/SKILL.md) -- routes that raise these custom exceptions.
+* [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory where error handlers are registered.
+* [Building API Routes](backend/building-api-routes/SKILL.md) -- routes that raise these custom exceptions.

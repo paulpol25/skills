@@ -11,10 +11,10 @@ Implement a JWT-based authentication token system with short-lived access tokens
 
 ## When to Use
 
-- After implementing local auth or OAuth, to manage authenticated sessions.
-- When transitioning from server-side sessions to stateless JWT-based auth.
-- When building an API that needs to support both browser clients (cookies) and mobile clients (bearer tokens).
-- When adding logout or "sign out everywhere" functionality.
+* After implementing local auth or OAuth, to manage authenticated sessions.
+* When transitioning from server-side sessions to stateless JWT-based auth.
+* When building an API that needs to support both browser clients (cookies) and mobile clients (bearer tokens).
+* When adding logout or "sign out everywhere" functionality.
 
 ## Instructions
 
@@ -37,10 +37,10 @@ A JWT consists of three parts: header, payload, and signature.
 }
 ```
 
-- `sub` -- Subject, the user's unique identifier.
-- `exp` -- Expiration time as a Unix timestamp.
-- `iat` -- Issued-at time as a Unix timestamp.
-- `role` -- The user's role for authorization checks.
+* `sub` -- Subject, the user's unique identifier.
+* `exp` -- Expiration time as a Unix timestamp.
+* `iat` -- Issued-at time as a Unix timestamp.
+* `role` -- The user's role for authorization checks.
 
 ### Access Token
 
@@ -201,21 +201,21 @@ def require_auth(f):
 ## Constraints
 
 <do>
-- Use short expiry (15 minutes) for access tokens.
-- Set httpOnly, Secure, and SameSite=Strict flags on refresh token cookies.
-- Rotate refresh tokens on every use, invalidating the previous token.
-- Revoke both access and refresh tokens on logout.
-- Scope the refresh cookie path to the refresh endpoint only.
-- Store refresh tokens as hashed values in the database.
+* Use short expiry (15 minutes) for access tokens.
+* Set httpOnly, Secure, and SameSite=Strict flags on refresh token cookies.
+* Rotate refresh tokens on every use, invalidating the previous token.
+* Revoke both access and refresh tokens on logout.
+* Scope the refresh cookie path to the refresh endpoint only.
+* Store refresh tokens as hashed values in the database.
 </do>
 
 <dont>
-- Store tokens in localStorage or sessionStorage; use httpOnly cookies for refresh tokens.
-- Use long-lived access tokens (more than 30 minutes).
-- Skip token revocation on logout; users expect logout to be immediate.
-- Embed sensitive data (passwords, PII) in the JWT payload.
-- Use the same secret key for access tokens and other application secrets.
-- Skip blocklist checks when verifying access tokens.
+* Store tokens in localStorage or sessionStorage; use httpOnly cookies for refresh tokens.
+* Use long-lived access tokens (more than 30 minutes).
+* Skip token revocation on logout; users expect logout to be immediate.
+* Embed sensitive data (passwords, PII) in the JWT payload.
+* Use the same secret key for access tokens and other application secrets.
+* Skip blocklist checks when verifying access tokens.
 </dont>
 
 ## Output Format
@@ -238,5 +238,5 @@ Set-Cookie header with new refresh token.
 
 ## Dependencies
 
-- [Implementing Local Auth](../implementing-local-auth/SKILL.md) -- user model and login flow that issues tokens.
-- [Scaffolding Flask](../../backend/scaffolding-flask/SKILL.md) -- Flask application and configuration setup.
+* [Implementing Local Auth](../implementing-local-auth/SKILL.md) -- user model and login flow that issues tokens.
+* [Scaffolding Flask](../../backend/scaffolding-flask/SKILL.md) -- Flask application and configuration setup.

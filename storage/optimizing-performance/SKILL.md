@@ -9,11 +9,11 @@ Identify and resolve PostgreSQL query performance bottlenecks through systematic
 
 # When to Use
 
-- A query takes longer than acceptable thresholds (typically >100ms for OLTP)
-- Application logs show slow query warnings
-- Database CPU or I/O is unexpectedly high
-- Adding a new feature that will query large tables
-- Reviewing query patterns before a production deployment
+* A query takes longer than acceptable thresholds (typically >100ms for OLTP)
+* Application logs show slow query warnings
+* Database CPU or I/O is unexpectedly high
+* Adding a new feature that will query large tables
+* Reviewing query patterns before a production deployment
 
 # Instructions
 
@@ -37,10 +37,10 @@ LIMIT 10;
 
 Look for these warning signs in the plan output:
 
-- **Seq Scan** on large tables — indicates a missing index
-- **Nested Loop** with high row counts — may need a Hash or Merge join
-- **Sort** with high memory usage — consider an index to avoid the sort
-- **Buffers: shared read** much higher than **shared hit** — data not cached, table may need vacuuming
+* **Seq Scan** on large tables — indicates a missing index
+* **Nested Loop** with high row counts — may need a Hash or Merge join
+* **Sort** with high memory usage — consider an index to avoid the sort
+* **Buffers: shared read** much higher than **shared hit** — data not cached, table may need vacuuming
 
 Example plan showing a problem:
 
@@ -81,11 +81,11 @@ Index Scan using ix_tasks_status on tasks  (cost=0.42..1523.15 rows=5023 width=1
 
 Apply these rules to every query:
 
-- Select only the columns you need; avoid `SELECT *`
-- Push filters into `WHERE` clauses rather than filtering in application code
-- Use `LIMIT` for paginated results
-- Use `EXISTS` instead of `IN` for subqueries on large sets
-- Avoid functions on indexed columns in WHERE clauses (they prevent index use)
+* Select only the columns you need; avoid `SELECT *`
+* Push filters into `WHERE` clauses rather than filtering in application code
+* Use `LIMIT` for paginated results
+* Use `EXISTS` instead of `IN` for subqueries on large sets
+* Avoid functions on indexed columns in WHERE clauses (they prevent index use)
 
 ```sql
 -- Bad: function on indexed column prevents index use
@@ -136,19 +136,19 @@ LIMIT 20;
 # Constraints
 
 <do>
-- Run EXPLAIN ANALYZE before and after every optimization to measure impact
-- Use partial indexes for queries that always filter on a specific condition
-- Monitor the slow query log in all environments
-- Vacuum and analyze tables regularly (or ensure autovacuum is properly configured)
-- Use covering indexes (INCLUDE) to enable index-only scans for critical queries
+* Run EXPLAIN ANALYZE before and after every optimization to measure impact
+* Use partial indexes for queries that always filter on a specific condition
+* Monitor the slow query log in all environments
+* Vacuum and analyze tables regularly (or ensure autovacuum is properly configured)
+* Use covering indexes (INCLUDE) to enable index-only scans for critical queries
 </do>
 
 <dont>
-- Add indexes blindly without first diagnosing the actual bottleneck
-- Index every column; each index adds write overhead and storage cost
-- Ignore the write performance impact of new indexes on INSERT/UPDATE-heavy tables
-- Use OFFSET for deep pagination; use keyset pagination instead
-- Cache query results at the application layer without understanding the underlying issue first
+* Add indexes blindly without first diagnosing the actual bottleneck
+* Index every column; each index adds write overhead and storage cost
+* Ignore the write performance impact of new indexes on INSERT/UPDATE-heavy tables
+* Use OFFSET for deep pagination; use keyset pagination instead
+* Cache query results at the application layer without understanding the underlying issue first
 </dont>
 
 # Output Format
@@ -157,5 +157,5 @@ Produce a performance analysis report containing: the original query, the EXPLAI
 
 # Dependencies
 
-- [Writing Queries](../writing-queries/SKILL.md) — the queries and models being optimized
-- [Index Strategy Reference](references/index-strategy.md) — decision tree for choosing the right index type
+* [Writing Queries](../writing-queries/SKILL.md) — the queries and models being optimized
+* [Index Strategy Reference](references/index-strategy.md) — decision tree for choosing the right index type

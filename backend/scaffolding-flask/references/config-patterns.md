@@ -43,10 +43,10 @@ class DevelopmentConfig(BaseConfig):
 ```
 
 Key characteristics:
-- `DEBUG = True` enables the debugger and auto-reload.
-- Uses a local SQLite or Postgres database.
-- SQL echo is on for query visibility.
-- Verbose logging at the DEBUG level.
+* `DEBUG = True` enables the debugger and auto-reload.
+* Uses a local SQLite or Postgres database.
+* SQL echo is on for query visibility.
+* Verbose logging at the DEBUG level.
 
 ## TestingConfig
 
@@ -63,10 +63,10 @@ class TestingConfig(BaseConfig):
 ```
 
 Key characteristics:
-- `TESTING = True` changes error handling behavior for assertions.
-- In-memory SQLite (or a dedicated test Postgres database) for speed.
-- CSRF protection disabled to simplify test requests.
-- Bcrypt rounds reduced to speed up password hashing in tests.
+* `TESTING = True` changes error handling behavior for assertions.
+* In-memory SQLite (or a dedicated test Postgres database) for speed.
+* CSRF protection disabled to simplify test requests.
+* Bcrypt rounds reduced to speed up password hashing in tests.
 
 ## ProductionConfig
 
@@ -88,10 +88,10 @@ class ProductionConfig(BaseConfig):
 ```
 
 Key characteristics:
-- `SECRET_KEY` and `DATABASE_URL` **must** be set or the app crashes on startup (intentional fail-fast).
-- Connection pooling is configured for concurrent load.
-- No debug mode, no testing mode.
-- Log level defaults to INFO but is configurable.
+* `SECRET_KEY` and `DATABASE_URL` **must** be set or the app crashes on startup (intentional fail-fast).
+* Connection pooling is configured for concurrent load.
+* No debug mode, no testing mode.
+* Log level defaults to INFO but is configurable.
 
 ## Config Selection
 
@@ -174,6 +174,6 @@ config_by_name = {
 
 ## Guidelines
 
-- Never commit real secrets to `config.py`. Use environment variables or a `.env` file (excluded from version control).
-- Production config should fail loudly if a required variable is missing. Use `os.environ["KEY"]` (not `.get()`).
-- Keep the base class minimal: only settings truly shared across all environments belong there.
+* Never commit real secrets to `config.py`. Use environment variables or a `.env` file (excluded from version control).
+* Production config should fail loudly if a required variable is missing. Use `os.environ["KEY"]` (not `.get()`).
+* Keep the base class minimal: only settings truly shared across all environments belong there.

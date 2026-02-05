@@ -11,10 +11,10 @@ Harden all authentication-related endpoints against common attacks by implementi
 
 ## When to Use
 
-- After implementing auth routes (login, registration, password reset, OAuth callbacks).
-- When preparing an application for production deployment.
-- During a security review or hardening pass.
-- When adding new auth-related endpoints to an existing application.
+* After implementing auth routes (login, registration, password reset, OAuth callbacks).
+* When preparing an application for production deployment.
+* During a security review or hardening pass.
+* When adding new auth-related endpoints to an existing application.
 
 ## Instructions
 
@@ -192,21 +192,21 @@ def log_failed_login(email: str, ip: str, reason: str):
 ## Constraints
 
 <do>
-- Rate limit all authentication endpoints with appropriate thresholds.
-- Enforce HTTPS in production with automatic HTTP-to-HTTPS redirects.
-- Use SameSite=Strict on all authentication cookies.
-- Log all failed authentication attempts with IP address and timestamp.
-- Set security headers (HSTS, X-Content-Type-Options, X-Frame-Options) on every response.
-- Implement per-account lockout with exponential backoff alongside per-IP rate limiting.
+* Rate limit all authentication endpoints with appropriate thresholds.
+* Enforce HTTPS in production with automatic HTTP-to-HTTPS redirects.
+* Use SameSite=Strict on all authentication cookies.
+* Log all failed authentication attempts with IP address and timestamp.
+* Set security headers (HSTS, X-Content-Type-Options, X-Frame-Options) on every response.
+* Implement per-account lockout with exponential backoff alongside per-IP rate limiting.
 </do>
 
 <dont>
-- Rely only on client-side validation for any security control.
-- Allow HTTP connections in production environments.
-- Expose token contents, internal error details, or stack traces in error responses.
-- Skip logging for failed authentication attempts.
-- Use a single rate limit strategy in isolation; combine IP-based and account-based protections.
-- Hard-code rate limit values; make them configurable via environment variables.
+* Rely only on client-side validation for any security control.
+* Allow HTTP connections in production environments.
+* Expose token contents, internal error details, or stack traces in error responses.
+* Skip logging for failed authentication attempts.
+* Use a single rate limit strategy in isolation; combine IP-based and account-based protections.
+* Hard-code rate limit values; make them configurable via environment variables.
 </dont>
 
 ## Output Format
@@ -232,5 +232,5 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ## Dependencies
 
-- [Managing Sessions and Tokens](../managing-sessions-tokens/SKILL.md) -- cookie configuration and token handling that these protections wrap around.
-- [Managing Flask Middleware](../../backend/managing-flask-middleware/SKILL.md) -- middleware patterns for applying security headers and rate limiting globally.
+* [Managing Sessions and Tokens](../managing-sessions-tokens/SKILL.md) -- cookie configuration and token handling that these protections wrap around.
+* [Managing Flask Middleware](../../backend/managing-flask-middleware/SKILL.md) -- middleware patterns for applying security headers and rate limiting globally.

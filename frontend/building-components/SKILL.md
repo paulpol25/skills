@@ -11,9 +11,9 @@ Create well-typed, reusable React function components following composition-firs
 
 ## When to Use
 
-- Building any new React component (primitive, composite, or page-level)
-- Refactoring an existing component to improve type safety or composability
-- Reviewing component code for adherence to project conventions
+* Building any new React component (primitive, composite, or page-level)
+* Refactoring an existing component to improve type safety or composability
+* Reviewing component code for adherence to project conventions
 
 ## Instructions
 
@@ -134,31 +134,31 @@ function UserList({ users }: UserListProps) {
 ## Constraints
 
 <do>
-- Give each component a single responsibility
-- Define explicit prop types using `interface`
-- Use `forwardRef` on all primitive UI components
-- Use composition (children, compound components) for flexibility
-- Co-locate component, types, and tests in the same directory
-- Use Tailwind utility classes for styling
+* Give each component a single responsibility
+* Define explicit prop types using `interface`
+* Use `forwardRef` on all primitive UI components
+* Use composition (children, compound components) for flexibility
+* Co-locate component, types, and tests in the same directory
+* Use Tailwind utility classes for styling
 </do>
 
 <dont>
-- Use `any` or `unknown` for prop types
-- Prop-drill more than 2 levels deep -- lift state or use a store
-- Mix data fetching logic into presentational components
-- Hardcode user-facing strings (prepare for i18n)
-- Use class components
-- Create "god components" with more than 200 lines
+* Use `any` or `unknown` for prop types
+* Prop-drill more than 2 levels deep -- lift state or use a store
+* Mix data fetching logic into presentational components
+* Hardcode user-facing strings (prepare for i18n)
+* Use class components
+* Create "god components" with more than 200 lines
 </dont>
 
 ## Output Format
 
 A component directory containing:
-- `ComponentName.tsx` with typed props and implementation
-- `index.ts` barrel export
-- `ComponentName.test.tsx` placeholder or full tests
+* `ComponentName.tsx` with typed props and implementation
+* `index.ts` barrel export
+* `ComponentName.test.tsx` placeholder or full tests
 
 ## Dependencies
 
-- [frontend/scaffolding-frontend/SKILL.md](../scaffolding-frontend/SKILL.md) -- project must be scaffolded first
-- [references/component-patterns.md](references/component-patterns.md) -- advanced pattern reference
+* [frontend/scaffolding-frontend/SKILL.md](../scaffolding-frontend/SKILL.md) -- project must be scaffolded first
+* [references/component-patterns.md](references/component-patterns.md) -- advanced pattern reference

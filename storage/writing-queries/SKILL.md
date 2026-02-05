@@ -9,10 +9,10 @@ Implement data access using SQLAlchemy ORM for standard CRUD operations and raw 
 
 # When to Use
 
-- Defining SQLAlchemy models for new or existing tables
-- Writing CRUD operations for a feature
-- Building complex queries with joins, aggregations, or subqueries
-- Deciding between ORM and raw SQL for a specific use case
+* Defining SQLAlchemy models for new or existing tables
+* Writing CRUD operations for a feature
+* Building complex queries with joins, aggregations, or subqueries
+* Deciding between ORM and raw SQL for a specific use case
 
 # Instructions
 
@@ -157,19 +157,19 @@ rows = result.mappings().all()
 # Constraints
 
 <do>
-- Use parameterized queries for all user-supplied values
-- Close sessions properly using context managers
-- Use eager loading (joinedload, selectinload) to prevent N+1 queries
-- Return plain data objects (dicts, dataclasses, Pydantic models) from repositories at the service boundary
-- Use flush() inside repositories and commit() at the service/transaction boundary
+* Use parameterized queries for all user-supplied values
+* Close sessions properly using context managers
+* Use eager loading (joinedload, selectinload) to prevent N+1 queries
+* Return plain data objects (dicts, dataclasses, Pydantic models) from repositories at the service boundary
+* Use flush() inside repositories and commit() at the service/transaction boundary
 </do>
 
 <dont>
-- Build SQL strings with f-strings or string concatenation
-- Ignore N+1 query warnings; profile with echo=True or SQLAlchemy event listeners
-- Return ORM model instances across the data layer boundary into HTTP handlers
-- Call session.commit() inside repository methods; let the caller control the transaction
-- Use session.execute() without parameterized bindings for dynamic values
+* Build SQL strings with f-strings or string concatenation
+* Ignore N+1 query warnings; profile with echo=True or SQLAlchemy event listeners
+* Return ORM model instances across the data layer boundary into HTTP handlers
+* Call session.commit() inside repository methods; let the caller control the transaction
+* Use session.execute() without parameterized bindings for dynamic values
 </dont>
 
 # Output Format
@@ -178,5 +178,5 @@ Produce a Python module containing the SQLAlchemy model class, a repository clas
 
 # Dependencies
 
-- [Designing Schemas](../designing-schemas/SKILL.md) — defines the table structures that models must match
-- [Writing Migrations](../writing-migrations/SKILL.md) — migrations must exist before models can be used
+* [Designing Schemas](../designing-schemas/SKILL.md) — defines the table structures that models must match
+* [Writing Migrations](../writing-migrations/SKILL.md) — migrations must exist before models can be used
