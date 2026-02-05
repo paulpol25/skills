@@ -114,5 +114,5 @@ Delegated 4 tasks:
 
 ## Dependencies
 
-- `shared/task-tracking/SKILL.md` — for the canonical task format and status lifecycle.
-- `agent-manager/delegating-tasks/references/agent-capabilities.md` — the master reference of agent skills used for task-to-agent matching.
+- `../../shared/task-tracking/SKILL.md` — for the canonical task format and status lifecycle.
+- `references/agent-capabilities.md` — the master reference of agent skills used for task-to-agent matching.

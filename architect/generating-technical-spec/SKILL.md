@@ -123,6 +123,6 @@ Key sections:
 
 ## Dependencies
 
-- `architect/designing-architecture/SKILL.md` -- provides the architecture document as input
+- `../designing-architecture/SKILL.md` -- provides the architecture document as input
 - `../../shared/task-tracking/SKILL.md` -- for tracking task progress during implementation
 - `references/spec-template.md` -- structural template for the output document

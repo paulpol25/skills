@@ -213,4 +213,4 @@ Produce each middleware module as a separate file under `app/middleware/`. Show 
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory where middleware is registered.
+- [Scaffolding Flask](../scaffolding-flask/SKILL.md) -- app factory where middleware is registered.

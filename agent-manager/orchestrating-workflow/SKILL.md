@@ -130,5 +130,5 @@ Next: Resolving T4 block before starting Wave 3.
 
 ## Dependencies
 
-- `shared/task-tracking/SKILL.md` — for reading and updating task statuses.
-- `agent-manager/delegating-tasks/SKILL.md` — tasks must be delegated before they can be orchestrated.
+- `../../shared/task-tracking/SKILL.md` — for reading and updating task statuses.
+- `../delegating-tasks/SKILL.md` — tasks must be delegated before they can be orchestrated.

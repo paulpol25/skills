@@ -88,5 +88,5 @@ Prefer MSW for API mocking to test the full network stack.
 - `*.test.tsx` or `*.spec.ts` files alongside the source files.
 
 ## Dependencies
-- `frontend/building-components/SKILL.md`
-- `designer/ensuring-accessibility/SKILL.md`
+- `../building-components/SKILL.md`
+- `../../designer/ensuring-accessibility/SKILL.md`

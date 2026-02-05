@@ -262,5 +262,5 @@ Generate `tests/conftest.py`, `tests/factories.py`, and at least one test file. 
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory used to create the test application.
-- [Building API Routes](backend/building-api-routes/SKILL.md) -- routes under test.
+- [Scaffolding Flask](../scaffolding-flask/SKILL.md) -- app factory used to create the test application.
+- [Building API Routes](../building-api-routes/SKILL.md) -- routes under test.

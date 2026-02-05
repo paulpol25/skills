@@ -92,4 +92,4 @@ Always run `tsc` (TypeScript Compiler) before `vite build` to catch type errors 
 - `vite.config.ts` configuration.
 
 ## Dependencies
-- `frontend/scaffolding-frontend/SKILL.md`
+- `../scaffolding-frontend/SKILL.md`

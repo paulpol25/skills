@@ -121,5 +121,5 @@ Each review produces a verdict block recorded in `tasks.md`:
 
 ## Dependencies
 
-- `shared/code-review/SKILL.md` — for general code review conventions and feedback format.
-- `agent-manager/delegating-tasks/SKILL.md` — for reading acceptance criteria and task context.
+- `../../shared/code-review/SKILL.md` — for general code review conventions and feedback format.
+- `../delegating-tasks/SKILL.md` — for reading acceptance criteria and task context.

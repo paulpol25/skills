@@ -228,5 +228,5 @@ When generating routes, produce the route file, the schema file, and the service
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory and blueprint registration.
+- [Scaffolding Flask](../scaffolding-flask/SKILL.md) -- app factory and blueprint registration.
 - [Task Tracking](../../shared/task-tracking/SKILL.md) -- track progress when building multiple endpoints.

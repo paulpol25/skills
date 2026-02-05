@@ -59,4 +59,4 @@ If it survives the critique, it's ready for planning.
 - Updates to project requirements or specs.
 
 ## Dependencies
-- `planner/project-planning/SKILL.md`
+- `../project-planning/SKILL.md`

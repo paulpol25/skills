@@ -61,5 +61,5 @@ Create a `SECURITY_AUDIT.md` report.
 - **Blocker**: If Critical/High issues are found, block the release in `tasks.md`.
 
 ## Dependencies
-- `security/auditing-dependencies/SKILL.md`
-- `backend/handling-errors/SKILL.md`
+- `../auditing-dependencies/SKILL.md`
+- `../../backend/handling-errors/SKILL.md`

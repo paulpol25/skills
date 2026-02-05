@@ -109,5 +109,5 @@ if (error) return <ErrorMessage message={error.message} />;
 - `src/features/*/api/*.ts` (hooks and fetchers)
 
 ## Dependencies
-- `backend/building-api-routes/SKILL.md` (Defines the API contract)
-- `frontend/managing-state/SKILL.md`
+- `../../backend/building-api-routes/SKILL.md` (Defines the API contract)
+- `../managing-state/SKILL.md`

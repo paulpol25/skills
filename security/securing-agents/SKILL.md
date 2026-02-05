@@ -58,4 +58,4 @@ Never assume the agent generated safe arguments for a tool.
 - `system_prompt_hardening_checklist.md`.
 
 ## Dependencies
-- `security/conducting-security-audit/SKILL.md`
+- `../conducting-security-audit/SKILL.md`

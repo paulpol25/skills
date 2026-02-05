@@ -108,5 +108,5 @@ server {
 - Updated `requirements.txt` with `gunicorn`
 
 ## Dependencies
-- `backend/scaffolding-flask/SKILL.md`
-- `shared/environment-config/SKILL.md`
+- `../scaffolding-flask/SKILL.md`
+- `../../shared/environment-config/SKILL.md`

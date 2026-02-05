@@ -128,5 +128,5 @@ A Markdown document containing:
 
 ## Dependencies
 
-- `architect/analyzing-requirements/SKILL.md` -- provides the requirements document as input
+- `../analyzing-requirements/SKILL.md` -- provides the requirements document as input
 - `references/architecture-patterns.md` -- reference for choosing the right pattern

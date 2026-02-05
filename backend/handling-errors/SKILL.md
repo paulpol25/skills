@@ -239,5 +239,5 @@ Generate `app/exceptions.py` and `app/error_handlers.py` as separate files. Show
 
 ## Dependencies
 
-- [Scaffolding Flask](backend/scaffolding-flask/SKILL.md) -- app factory where error handlers are registered.
-- [Building API Routes](backend/building-api-routes/SKILL.md) -- routes that raise these custom exceptions.
+- [Scaffolding Flask](../scaffolding-flask/SKILL.md) -- app factory where error handlers are registered.
+- [Building API Routes](../building-api-routes/SKILL.md) -- routes that raise these custom exceptions.

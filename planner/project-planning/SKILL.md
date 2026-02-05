@@ -62,4 +62,4 @@ Identify what could go wrong.
 - Updates to `tasks.md` (high-level epics).
 
 ## Dependencies
-- `architect/analyzing-requirements/SKILL.md`
+- `../../architect/analyzing-requirements/SKILL.md`
