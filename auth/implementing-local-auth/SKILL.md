@@ -161,5 +161,5 @@ hashed = bcrypt.hashpw(password.encode("utf-8"), salt)
 ## Dependencies
 
 - [Building API Routes](../../backend/building-api-routes/SKILL.md) -- route structure and request handling.
-- [Designing Schemas](../../storage/designing-schemas/SKILL.md) -- user table schema design.
+- [Designing Schemas](../../database/designing-schemas/SKILL.md) -- user table schema design.
 - [Password Policy](references/password-policy.md) -- password strength and lockout rules.

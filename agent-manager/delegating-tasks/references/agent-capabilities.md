@@ -78,9 +78,9 @@ This is the canonical reference for all agents in the system. Use it when decidi
 
 | Skill | Path | Description |
 |-------|------|-------------|
-| Writing Migrations | `storage/writing-migrations/SKILL.md` | Schema changes, table creation, index management |
-| Building Queries | `storage/building-queries/SKILL.md` | Efficient reads and writes, query optimization |
-| Managing Seeds | `storage/managing-seeds/SKILL.md` | Test data, seed scripts, data fixtures |
+| Writing Migrations | `database/writing-migrations/SKILL.md` | Schema changes, table creation, index management |
+| Building Queries | `database/building-queries/SKILL.md` | Efficient reads and writes, query optimization |
+| Managing Seeds | `database/managing-seeds/SKILL.md` | Test data, seed scripts, data fixtures |
 
 **Key strengths:** Schema design implementation, query performance, data integrity constraints, migration safety.
 **Technologies:** PostgreSQL, Prisma, SQL, database indexing, migration tooling.

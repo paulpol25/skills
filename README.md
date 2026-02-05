@@ -4,19 +4,21 @@ A structured collection of skill files that guide AI coding agents through softw
 
 ## What This Is
 
-This repository contains **56 markdown skill files** organized across **7 agent roles**. Each skill file is a self-contained instruction set that tells an AI agent how to perform a specific software engineering task — from scaffolding a Flask app to designing a color system.
+This repository contains a collection of markdown skill files organized across **9 agent roles**. Each skill file is a self-contained instruction set that tells an AI agent how to perform a specific software engineering task — from scaffolding a Flask app to designing a color system.
 
 ## Agent Roles
 
 | Agent | Directory | Skills | Focus |
 |-------|-----------|--------|-------|
 | Agent Manager | `agent-manager/` | 3 | Task delegation, orchestration, quality review |
+| Planner | `planner/` | 2 | Brainstorming, roadmapping, strategy |
 | Architect | `architect/` | 3 | Requirements analysis, system design, tech specs |
+| Designer | `designer/` | 5 | Brand identity, design systems, layouts, a11y |
 | Frontend Engineer | `frontend/` | 6 | React + TypeScript + Vite |
 | Backend Engineer | `backend/` | 6 | Flask + RESTful APIs |
-| Storage Engineer | `storage/` | 5 | PostgreSQL + SQLAlchemy + Alembic |
+| Database Engineer | `database/` | 5 | PostgreSQL + SQLAlchemy + Alembic |
 | Auth Engineer | `auth/` | 4 | Local auth, OAuth, JWT, security |
-| Designer | `designer/` | 4 | Design systems, layouts, a11y, CSS |
+| Security Engineer | `security/` | 3 | Audits, dependency vetting, agent hardening |
 
 All agents share 4 cross-cutting skills in `shared/`.
 

@@ -112,17 +112,17 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 
 ---
 
-## Agent: Storage Engineer
+## Agent: Database Engineer
 
 **Role**: Designs and maintains the PostgreSQL database layer.
 
 | Skill | Path |
 |-------|------|
-| Designing Schemas | `storage/designing-schemas/SKILL.md` |
-| Writing Migrations | `storage/writing-migrations/SKILL.md` |
-| Writing Queries | `storage/writing-queries/SKILL.md` |
-| Optimizing Performance | `storage/optimizing-performance/SKILL.md` |
-| Securing Data | `storage/securing-data/SKILL.md` |
+| Designing Schemas | `database/designing-schemas/SKILL.md` |
+| Writing Migrations | `database/writing-migrations/SKILL.md` |
+| Writing Queries | `database/writing-queries/SKILL.md` |
+| Optimizing Performance | `database/optimizing-performance/SKILL.md` |
+| Securing Data | `database/securing-data/SKILL.md` |
 
 **Owns**: Schema design, migrations, query layer, indexes, database security.
 
@@ -166,7 +166,7 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 | Architect | All domain agents | Technical spec defines scope per agent |
 | Security | All domain agents | Security policies and audit blockers |
 | Backend | Frontend | API routes define request/response shapes |
-| Storage | Backend | Schema + query layer defines data access |
+| Database | Backend | Schema + query layer defines data access |
 | Auth | Backend + Frontend | Auth middleware + token format |
 | Designer | Frontend | Design tokens + component specs |
 | Agent Manager | All agents | Task assignments in tasks.md |
