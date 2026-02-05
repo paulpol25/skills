@@ -58,6 +58,7 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 | Skill | Path |
 |-------|------|
 | Defining User Stories | `product/defining-user-stories/SKILL.md` |
+| Managing Backlog | `product/managing-backlog/SKILL.md` |
 
 **Owns**: User stories, acceptance criteria, prioritizing value.
 
@@ -179,6 +180,9 @@ This file defines the 8 agent roles, their responsibilities, and the skills avai
 | Skill | Path |
 |-------|------|
 | Configuring CI/CD | `devops/configuring-cicd/SKILL.md` |
+| Provisioning Infrastructure | `devops/provisioning-infrastructure/SKILL.md` |
+| Implementing Observability | `devops/implementing-observability/SKILL.md` |
+| Site Reliability (SRE) | `devops/site-reliability/SKILL.md` |
 
 **Owns**: `.github/workflows`, Dockerfiles, deployment scripts.
 
